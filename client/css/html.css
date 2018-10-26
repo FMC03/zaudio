@@ -1,0 +1,317 @@
+ /* BODY AND HTML FIXER */
+body, html{
+    margin: 0px;
+    padding: 0px;
+    background: #ffffff;
+    min-width: 370px;
+}
+
+/* HEADER CONTAINER */
+header.Client_Header_Container{
+    width: 100%;
+    display: inline-block;
+    background: #ffffff;
+    border-bottom: 1px solid #ececec;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+/* PAGE CONTAINER */
+div.Client_Page_Container{
+    height: auto;
+    padding: 5px;
+    padding-bottom: 145px;
+}
+
+/* HOME PAGE  */
+div.Client_Home_Container{
+    height: auto;
+}
+
+/* SPONSORED CONTAINER */
+div.Client_Home_Container div.Home_Sponsored_Container{
+    padding: 5px;
+}
+
+div.Home_Sponsored_Container div.Sponsored_Text_Container{
+    position: relative;
+    top: 5px;
+    left: 5px;
+    height: 0px;    
+}
+
+div.Sponsored_Text_Container b.Sponsored_Artist_Text{
+    display: block;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 31px;
+    height: 30px;
+}
+
+div.Sponsored_Text_Container b.Sponsored_Song_Text{
+    display: block;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+div.Home_Sponsored_Container div.Sponsored_ViewMore{
+    height: 0px;
+    position: relative;
+    bottom: 20px;
+    padding-right: 10px;
+}
+
+div.Home_Sponsored_Container div.Sponsored_Circles{
+    height: 0px;
+    position: relative;
+    bottom: 15px;
+    padding-right: 10px;
+    width: 50px;
+    margin: auto;
+}
+
+div.Sponsored_Circles div.Circle_{
+    float: left;
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+    background: #bdbdbd;
+    margin: 2px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    box-shadow: 0px 0px 10px #000000;
+}
+
+div.Sponsored_Circles div._Selected{
+    background: #ffffff;
+    box-shadow: 0px 0px 10px #ffffff;
+}
+
+div.Sponsored_Artist_IMG{
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #00000080;
+    background-position: center;
+}
+
+div.Sponsored_ViewMore b.ViewMore{
+    display: block;
+    font-family: sans-serif;
+    color: #ffffff;
+    font-size: 12px;
+    float: right;
+    border-radius: 5px;
+}
+
+/* RECOMMENDED ALBUMS */
+div.Recommended_Artists_Container{
+    display: inline-block;
+}
+
+div.Client_Home_Container div div.Title_Container{
+    padding: 5px;
+}
+
+div.Client_Home_Container div div b.TextStyle_Title{
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #262626;
+    display: block;
+}
+
+div.Client_Home_Container div div b.TextStyle_BigTitle{
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #262626;
+    display: block;
+}
+
+div.Recommened_Artist{
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
+}
+
+div.Recommened_Artist div.Artist_IMG{
+    background-size: cover;
+    width: 46px;
+    height: 46px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px #00000080;
+    background-position: center;
+}
+
+/* RECOMMENED SONGS */
+div.Recommened_Songs_Container{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+div.Recommened_Songs_Container div.Recommened_Song div.Song_IMG{
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #00000080;
+    background-position: center;
+    border: 1px solid #b5b5b5;
+}
+
+div.Recommened_Songs_Container div div{
+    float: left;
+}
+
+div.Recommened_Songs_Container div.Recommened_Song {
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+div.Recommened_Songs_Container div.Song_Information{
+    padding-left: 10px;
+    padding-top: 4px;
+    display: inline-block;
+}
+
+div.Recommened_Songs_Container div.Song_Information b{
+    display: block;
+    font-family: sans-serif;
+}
+
+div.Song_Information b.Song_Name{
+    font-size: 14px;
+    color: #444444;
+}
+
+div.Song_Information b.Song_Artist{
+    font-size: 12px;
+    color: #5f5f5f;
+    font-weight: 600;
+}
+
+div.Song_Information b.Song_Trending{
+    font-size: 10px;
+    color: #E91E63;
+    font-weight: 600;
+}
+
+
+/* CURRENTLY PLAYING CONTRAINER */
+div.Client_Currently_Playing{
+    width: 100%;
+    display: inline-block;
+    background: #fffffff0;
+    border-top: 1px solid #e8e8e8;
+    position: fixed;
+    z-index: 3;
+    bottom: 66px;
+    height: 82px;
+}
+
+div.Client_Currently_Playing div.Currently_Playing_Container{
+    padding: 5px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+div.Client_Currently_Playing div div{
+    float: left;
+}
+
+div.Client_Currently_Playing div div.Song_Information{
+    padding-left: 10px;
+    padding-top: 4px;
+    display: inline-block;
+}
+
+div.Client_Currently_Playing div div.Song_Information b{
+    display: block;
+    font-family: sans-serif;
+}
+
+div.Client_Currently_Playing div div.Song_Information b.Song_Playing{
+    font-size: 9px;
+    color: #989898;
+}
+
+div.Client_Currently_Playing div div.Song_IMG{
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background-position: center;
+    box-shadow: 0px 0px 10px #00000080;
+    border: 1px solid #d4d4d4;
+}
+
+div.Client_Currently_Playing div div.Song_Options{
+    float: right;
+    padding-right: 20px;
+    padding-top: 5px;
+    display: inline-block;
+}
+
+div.Client_Currently_Playing div div.Song_Options a{
+   text-decoration: none;
+}
+
+div.Client_Currently_Playing div div.Song_Options a i{
+   text-decoration: none;
+   font-size: 23px;
+   color: #858585;
+}
+
+div.Client_Currently_Playing div.Song_Options a.Action{
+    padding-top: 10px;
+}
+
+div.Client_Currently_Playing div.Song_Options a.Action i{
+    font-size: 32px;
+    color: #656565;
+}
+
+/* FOOTER CONTAINER */
+footer.Client_Footer_Container{
+    width: 100%;
+    display: inline-block;
+    background: #ffffff;
+    border-top: 1px solid #ececec;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 2;
+    height: 40px;
+}
+
+footer.Client_Footer_Container div.Footer_Options_Container{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+footer.Client_Footer_Container div.Footer_Options_Container a.Footer_Option{
+    width: 30%;
+    height: 100%;
+    padding: 20px;
+    text-decoration: none;
+}
+
+div.Footer_Options_Container a.Footer_Option i{   
+    text-decoration: none;  
+    font-size: 25px;  
+    color: #545454;
+}
+
+div.Footer_Options_Container a.Footer_Option i.Search_Option{
+    font-size: 30px;
+}
