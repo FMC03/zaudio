@@ -156,7 +156,7 @@ div.Recommended_Songs_Container{
     padding-right: 10px;
 }
 
-div.Recommended_Artist_Container div:nth-child(even){
+div.Recommended_Songs_Container div:nth-child(even){
     background-color: #f9f9f9;
 }
 
