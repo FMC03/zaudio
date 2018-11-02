@@ -135,13 +135,13 @@ div.Client_Home_Container div div b.TextStyle_BigTitle{
     display: block;
 }
 
-div.Recommened_Artist{
+div.Recommended_Artist{
     display: inline-block;
     float: left;
     margin-left: 5px;
 }
 
-div.Recommened_Artist div.Artist_IMG{
+div.Recommended_Artist div.Artist_IMG{
     background-size: cover;
     width: 46px;
     height: 46px;
@@ -150,13 +150,17 @@ div.Recommened_Artist div.Artist_IMG{
     background-position: center;
 }
 
-/* RECOMMENED SONGS */
-div.Recommened_Songs_Container{
+/* Recommended SONGS */
+div.Recommended_Songs_Container{
     padding-left: 10px;
     padding-right: 10px;
 }
 
-div.Recommened_Songs_Container div.Recommened_Song div.Song_IMG{
+div.Recommended_Artist_Container div:nth-child(even){
+    background-color: #f9f9f9;
+}
+
+div.Recommended_Songs_Container div.Recommended_Song div.Song_IMG{
     background-size: cover;
     width: 50px;
     height: 50px;
@@ -166,22 +170,22 @@ div.Recommened_Songs_Container div.Recommened_Song div.Song_IMG{
     border: 1px solid #b5b5b5;
 }
 
-div.Recommened_Songs_Container div div{
+div.Recommended_Songs_Container div div{
     float: left;
 }
 
-div.Recommened_Songs_Container div.Recommened_Song {
+div.Recommended_Songs_Container div.Recommended_Song {
     height: 50px;
     margin-bottom: 5px;
 }
 
-div.Recommened_Songs_Container div.Song_Information{
+div.Recommended_Songs_Container div.Song_Information{
     padding-left: 10px;
     padding-top: 4px;
     display: inline-block;
 }
 
-div.Recommened_Songs_Container div.Song_Information b{
+div.Recommended_Songs_Container div.Song_Information b{
     display: block;
     font-family: sans-serif;
 }

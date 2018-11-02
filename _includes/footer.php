@@ -1,6 +1,6 @@
 <div class="Client_Currently_Playing">
 	<div class="Currently_Playing_Container">
-		<div style="background-image: url(/msa/client/images/sm.jpg);"  class="Song_IMG"></div>
+		<div style="background-image: url(client/images/sm.jpg);"  class="Song_IMG"></div>
 		<div class="Song_Information">
 			<b class="Song_Playing">CURRENTLY PLAYING</b>
 			<b class="Song_Name">Sicko Mode</b>
