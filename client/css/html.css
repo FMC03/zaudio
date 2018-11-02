@@ -216,7 +216,7 @@ div.Client_Currently_Playing{
     border-top: 1px solid #e8e8e8;
     position: fixed;
     z-index: 3;
-    bottom: 66px;
+    bottom: 56px;
     height: 60px;
 }
 
