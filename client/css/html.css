@@ -156,8 +156,8 @@ div.Recommended_Songs_Container{
     padding-right: 10px;
 }
 
-div.Recommended_Songs_Container div:nth-child(even){
-    background-color: #f9f9f9;
+div.Recommended_Songs_Container div:nth-child(odd){
+    background-color: #fafafa;
 }
 
 div.Recommended_Songs_Container div.Recommended_Song div.Song_IMG{
@@ -208,7 +208,7 @@ div.Song_Information b.Song_Trending{
 }
 
 
-/* CURRENTLY PLAYING CONTRAINER */
+/* CURRENTLY PLAYING CONTAINER */
 div.Client_Currently_Playing{
     width: 100%;
     display: inline-block;
@@ -217,7 +217,7 @@ div.Client_Currently_Playing{
     position: fixed;
     z-index: 3;
     bottom: 66px;
-    height: 82px;
+    height: 60px;
 }
 
 div.Client_Currently_Playing div.Currently_Playing_Container{
@@ -249,8 +249,8 @@ div.Client_Currently_Playing div div.Song_Information b.Song_Playing{
 
 div.Client_Currently_Playing div div.Song_IMG{
     background-size: cover;
-    width: 60px;
-    height: 60px;
+    width: 35px;
+    height: 35px;
     border-radius: 50px;
     background-position: center;
     box-shadow: 0px 0px 10px #00000080;
@@ -290,7 +290,7 @@ footer.Client_Footer_Container{
     background: #ffffff;
     border-top: 1px solid #ececec;
     padding-top: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     position: fixed;
     bottom: 0px;
     z-index: 2;
