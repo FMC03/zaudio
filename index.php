@@ -53,20 +53,26 @@
 						<b class="TextStyle_Title">Recommended Artists</b>
 					</div>
 					<div class="Recommended_Artists_Container">
-						<div class="Recommended_Artist Young Thug">
+						<div class="Recommended_Artist">
 							<div style="background-image: url(client/images/ytj.jpg);" class="Artist_IMG"></div>
 						</div>
-						<div class="Recommended_Artist Tyler The Creator">
+						<div class="Recommended_Artist">
 							<div style="background-image: url(client/images/ttcfb.png);" class="Artist_IMG"></div>
 						</div>
-						<div class="Recommended_Artist Ariana Grande">
+						<div class="Recommended_Artist">
 							<div style="background-image: url(client/images/ag.jpg);" class="Artist_IMG"></div>
 						</div>
-						<div class="Recommended_Artist Chief Keef">
+						<div class="Recommended_Artist">
 							<div style="background-image: url(client/images/ck.jpg);" class="Artist_IMG"></div>
 						</div>
-						<div class="Recommended_Artist Drake">
+						<div class="Recommended_Artist">
 							<div style="background-image: url(client/images/drakepfp.jpg);" class="Artist_IMG"></div>
+						</div>
+						<div class="Recommended_Artist">
+							<div style="background-image: url(client/images/travis.jpg);" class="Artist_IMG"></div>
+						</div>
+						<div class="Recommended_Artist">
+							<div style="background-image: url(client/images/ba.jpg);" class="Artist_IMG"></div>
 						</div>
 					</div>
 				</div>

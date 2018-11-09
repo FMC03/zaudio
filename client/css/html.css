@@ -6,6 +6,10 @@ body, html{
     min-width: 370px;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
 /* HEADER CONTAINER */
 header.Client_Header_Container{
     width: 100%;
@@ -23,7 +27,7 @@ header.Client_Header_Container{
 div.Client_Page_Container{
     height: auto;
     padding: 5px;
-    padding-bottom: 145px;
+    padding-bottom: 120px;
 }
 
 /* HOME PAGE  */
@@ -99,7 +103,7 @@ div.Sponsored_Circles div._Selected{
 div.Sponsored_Artist_IMG{
     background-size: cover;
     width: 100%;
-    height: 150px;
+    height: 200px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #00000080;
     background-position: center;
@@ -117,7 +121,18 @@ div.Sponsored_ViewMore b.ViewMore{
 
 /* RECOMMENDED ALBUMS */
 div.Recommended_Artists_Container{
-    display: inline-block;
+    display: block;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 5px;
+    padding-right: 10px;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+
+div.Recommended_Artists_Container::-webkit-scrollbar{
+    display: none;
 }
 
 div.Client_Home_Container div div.Title_Container{
@@ -140,7 +155,6 @@ div.Client_Home_Container div div b.TextStyle_BigTitle{
 
 div.Recommended_Artist{
     display: inline-block;
-    float: left;
     margin-left: 5px;
 }
 
@@ -149,7 +163,6 @@ div.Recommended_Artist div.Artist_IMG{
     width: 46px;
     height: 46px;
     border-radius: 50px;
-    box-shadow: 0px 0px 10px #00000080;
     background-position: center;
 }
 
@@ -159,10 +172,6 @@ div.Recommended_Songs_Container{
     padding-right: 10px;
 }
 
-div.Recommended_Songs_Container div:nth-child(odd){
-    background-color: #fafafa;
-}
-
 div.Recommended_Songs_Container div.Recommended_Song div.Song_IMG{
     background-size: cover;
     width: 50px;
@@ -170,7 +179,6 @@ div.Recommended_Songs_Container div.Recommended_Song div.Song_IMG{
     border-radius: 5px;
     box-shadow: 0px 0px 10px #00000080;
     background-position: center;
-    border: 1px solid #b5b5b5;
 }
 
 div.Recommended_Songs_Container div div{
@@ -179,7 +187,7 @@ div.Recommended_Songs_Container div div{
 
 div.Recommended_Songs_Container div.Recommended_Song {
     height: 50px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 div.Recommended_Songs_Container div.Song_Information{
@@ -215,11 +223,11 @@ div.Song_Information b.Song_Trending{
 div.Client_Currently_Playing{
     width: 100%;
     display: inline-block;
-    background: #fffffff0;
-    border-top: 1px solid #e8e8e8;
+    background: #ffffff;
+    border-top: 1px solid #f8f8f8;
     position: fixed;
     z-index: 3;
-    bottom: 56px;
+    bottom: 55px;
     height: 60px;
 }
 
@@ -292,7 +300,6 @@ footer.Client_Footer_Container{
     width: 100%;
     display: inline-block;
     background: #ffffff;
-    border-top: 1px solid #ececec;
     padding-top: 15px;
     padding-bottom: 0px;
     position: fixed;
