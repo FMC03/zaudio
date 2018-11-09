@@ -36,7 +36,7 @@
 						<b class="Sponsored_Artist_Text">ARIANA GRANDE</b>
 						<b class="Sponsored_Song_Text">God is a woman</b>
 					</div> -->
-					<img class="Sponsored_Artist_IMG" src="client/images/travis.jpg" />
+					<div class="Sponsored_Artist_IMG" style="background-image: url(client/images/travis.jpg);"></div>
 					<div class="Sponsored_ViewMore">
 						<b class="ViewMore">View More</b>
 					</div>
