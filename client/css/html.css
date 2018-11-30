@@ -126,6 +126,8 @@ div.Recommended_Artists_Container{
     overflow-x: scroll;
     overflow-y: hidden;
     padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-right: 10px;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
@@ -164,12 +166,12 @@ div.Recommended_Artist div.Artist_IMG{
     height: 46px;
     border-radius: 50px;
     background-position: center;
+    box-shadow: 0px 0px 10px #00000052;
 }
 
 /* Recommended SONGS */
 div.Recommended_Songs_Container{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
 }
 
 div.Recommended_Songs_Container div.Recommended_Song div.Song_IMG{
@@ -224,7 +226,7 @@ div.Client_Currently_Playing{
     width: 100%;
     display: inline-block;
     background: #ffffff;
-    border-top: 1px solid #f8f8f8;
+    border-top: 1px solid #f0f0f0;
     position: fixed;
     z-index: 3;
     bottom: 55px;
@@ -295,6 +297,27 @@ div.Client_Currently_Playing div.Song_Options a.Action i{
     background-position: center;
 }
 
+/* SEARCH CONTAINER */
+div.Search_Bar_Container{
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    background: #ffffff;
+}
+
+div.Search_Bar_Container input.Search_Input{
+    width: 95%;
+    height: 100%;
+    border-radius: 5px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    outline: none;
+    font-size: 13px;
+    color: #5f5f5f;
+    font-weight: 500;
+}
+
 /* FOOTER CONTAINER */
 footer.Client_Footer_Container{
     width: 100%;
@@ -306,6 +329,7 @@ footer.Client_Footer_Container{
     bottom: 0px;
     z-index: 2;
     height: 40px;
+    box-shadow: 0px -60px 80px #0000000f;
 }
 
 footer.Client_Footer_Container div.Footer_Options_Container{

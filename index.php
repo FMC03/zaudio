@@ -46,7 +46,6 @@
 						<div class="Circle_ 3"></div>
 					</div>
 				</div>
-
 				<!-- RECOMMENDED ARTIST CONTAINER -->
 				<div class="Home_Recommended_Artist_Container">
 					<div class="Title_Container">
@@ -73,6 +72,9 @@
 						</div>
 						<div class="Recommended_Artist">
 							<div style="background-image: url(client/images/ba.jpg);" class="Artist_IMG"></div>
+						</div>
+						<div class="Recommended_Artist">
+							<div style="background-image: url(client/images/fls.png);" class="Artist_IMG"></div>
 						</div>
 					</div>
 				</div>
