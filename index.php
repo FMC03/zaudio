@@ -12,13 +12,6 @@
 						<b class="Sponsored_Artist_Text">YOUNG THUG</b>
 						<b class="Sponsored_Song_Text">Jeffery</b>
 					</div> -->
-
-					<!-- TRAVIS SCOTT -->
-					<div class="Sponsored_Text_Container">
-						<b class="Sponsored_Artist_Text">TRAVIS SCOTT</b>
-						<b class="Sponsored_Song_Text">Astroworld</b>
-					</div>
-
 					<!-- DRAKE -->
 					<!-- <div class="Sponsored_Text_Container">
 						<b class="Sponsored_Artist_Text">DRAKE</b>
@@ -46,8 +39,20 @@
 						<div class="Circle_ 3"></div>
 					</div>
 				</div>
+
+				<!-- <div class="Home_Recommended_Albums_Container">
+					<div class="Title_Container">
+						<b class="TextStyle_Title">Recommended Albums</b>
+					</div>
+					<div class="Recommended_Alumbs_Container">
+						<div class="Recommended_Album">
+
+						</div>
+					</div>
+				</div> -->
+
 				<!-- RECOMMENDED ARTIST CONTAINER -->
-				<div class="Home_Recommended_Artist_Container">
+				<div class="Recommended_Artist_Container">
 					<div class="Title_Container">
 						<b class="TextStyle_Title">Recommended Artists</b>
 					</div>
@@ -73,13 +78,10 @@
 						<div class="Recommended_Artist">
 							<div style="background-image: url(client/images/ba.jpg);" class="Artist_IMG"></div>
 						</div>
-						<div class="Recommended_Artist">
-							<div style="background-image: url(client/images/fls.png);" class="Artist_IMG"></div>
-						</div>
 					</div>
 				</div>
 
-				<!-- Recommended SONGS CONTAINER -->
+				<!-- RECOMMENDED SONGS CONTAINER -->
 				<div class="Home_Recommended_Songs_Container">
 					<div class="Title_Container">
 						<b class="TextStyle_Title">Recommended Songs</b>
@@ -91,7 +93,16 @@
 							<div class="Song_Information">								
 								<b class="Song_Name">Gucci Gang</b>
 								<b class="Song_Artist">Lil Pump</b>
-								<b class="Song_Trending">TRENDING</b>
+								<div class="Song_Data">
+									<div class="Liked">
+										<img src="client/images/icons/liked.png" />
+										<b class="Song_Liked_Amount">5</b>
+									</div>
+									<div class="Replay">
+										<img src="client/images/icons/replays.png" />
+										<b class="Song_Replay_Amount">5k+</b>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -100,6 +111,16 @@
 							<div class="Song_Information">
 								<b class="Song_Name">Feels Like Summer</b>
 								<b class="Song_Artist">Childish Gambino</b>
+								<div class="Song_Data">
+									<div class="Liked">
+										<img src="client/images/icons/liked.png" />
+										<b class="Song_Liked_Amount">1.3k+</b>
+									</div>
+									<div class="Replay">
+										<img src="client/images/icons/replays.png" />
+										<b class="Song_Replay_Amount">5k+</b>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -108,6 +129,16 @@
 							<div class="Song_Information">
 								<b class="Song_Name">XO Tour Lif3</b>
 								<b class="Song_Artist">Lil Uzi Vert</b>
+								<div class="Song_Data">
+									<div class="Liked">
+										<img src="client/images/icons/liked.png" />
+										<b class="Song_Liked_Amount">2k+</b>
+									</div>
+									<div class="Replay">
+										<img src="client/images/icons/replays.png" />
+										<b class="Song_Replay_Amount">5k+</b>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -116,6 +147,16 @@
 							<div class="Song_Information">
 								<b class="Song_Name">God's Plan</b>
 								<b class="Song_Artist">Drake</b>
+								<div class="Song_Data">
+									<div class="Liked">
+										<img src="client/images/icons/liked.png" />
+										<b class="Song_Liked_Amount">7</b>
+									</div>
+									<div class="Replay">
+										<img src="client/images/icons/replays.png" />
+										<b class="Song_Replay_Amount">5k+</b>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -124,6 +165,16 @@
 							<div class="Song_Information">
 								<b class="Song_Name">Sicko Mode</b>
 								<b class="Song_Artist">Travis Scott</b>
+								<div class="Song_Data">
+									<div class="Liked">
+										<img src="client/images/icons/liked.png" />
+										<b class="Song_Liked_Amount">5k+</b>
+									</div>
+									<div class="Replay">
+										<img src="client/images/icons/replays.png" />
+										<b class="Song_Replay_Amount">5k+</b>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -132,6 +183,16 @@
 							<div class="Song_Information">
 								<b class="Song_Name">Bank Account</b>
 								<b class="Song_Artist">21 Savage</b>
+								<div class="Song_Data">
+									<div class="Liked">
+										<img src="client/images/icons/liked.png" />
+										<b class="Song_Liked_Amount">21</b>
+									</div>
+									<div class="Replay">
+										<img src="client/images/icons/replays.png" />
+										<b class="Song_Replay_Amount">5k+</b>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -140,6 +201,16 @@
 							<div class="Song_Information">
 								<b class="Song_Name">SAD!</b>
 								<b class="Song_Artist">XXXTentacion</b>
+								<div class="Song_Data">
+									<div class="Liked">
+										<img src="client/images/icons/liked.png" />
+										<b class="Song_Liked_Amount">703</b>
+									</div>
+									<div class="Replay">
+										<img src="client/images/icons/replays.png" />
+										<b class="Song_Replay_Amount">5k+</b>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -148,6 +219,52 @@
 							<div class="Song_Information">
 								<b class="Song_Name">Lucid Dreams</b>
 								<b class="Song_Artist">Juice WRLD</b>
+								<div class="Song_Data">
+									<div class="Liked">
+										<img src="client/images/icons/liked.png" />
+										<b class="Song_Liked_Amount">1k+</b>
+									</div>
+									<div class="Replay">
+										<img src="client/images/icons/replays.png" />
+										<b class="Song_Replay_Amount">5k+</b>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="Recommended_Song Ariana Grande - God Is A Woman">
+							<div style="background-image: url(client/images/ariana.jpg);"  class="Song_IMG"></div>
+							<div class="Song_Information">
+								<b class="Song_Name">God Is A Woman</b>
+								<b class="Song_Artist">Ariana Grande</b>
+								<div class="Song_Data">
+									<div class="Liked">
+										<img src="client/images/icons/liked.png" />
+										<b class="Song_Liked_Amount">1.8k+</b>
+									</div>
+									<div class="Replay">
+										<img src="client/images/icons/replays.png" />
+										<b class="Song_Replay_Amount">5k+</b>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="Recommended_Song Tyler The Creator - Who Dat Boy">
+							<div style="background-image: url(client/images/ttcfb.png);"  class="Song_IMG"></div>
+							<div class="Song_Information">
+								<b class="Song_Name">Who Dat Boy</b>
+								<b class="Song_Artist">Tyler The Creator</b>
+								<div class="Song_Data">
+									<div class="Liked">
+										<img src="client/images/icons/liked.png" />
+										<b class="Song_Liked_Amount">2.4k+</b>
+									</div>
+									<div class="Replay">
+										<img src="client/images/icons/replays.png" />
+										<b class="Song_Replay_Amount">5k+</b>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
