@@ -230,6 +230,10 @@ div.Song_Data div img{
     float: left;
 }
 
+div.Song_Data div.Replay img{
+    width: 15px;
+}
+
 div.Song_Data div{
     margin-right: 5px;
 }
@@ -316,8 +320,8 @@ div.Client_Currently_Playing div div.Song_Information b.Song_Playing{
 
 div.Client_Currently_Playing div div.Song_IMG{
     background-size: cover;
-    width: 35px;
-    height: 35px;
+    width: 55px;
+    height: 55px;
     border-radius: 50px;
     background-position: center;
     box-shadow: 0px 0px 10px #00000080;
