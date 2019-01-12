@@ -392,12 +392,16 @@ div.Footer_Options_Container a.Footer_Option i.Search_Option{
     font-size: 30px;
 }
 
+div.Search_Results_Container{
+    float:left;
+}
+
 div.Results_Container_Group {
-    padding-top: 80px;
     font-family: sans-serif;
-   }
+}
 
 div.Search_Group {
+    padding-top: 80px;
     padding-left: 20px;
     font-weight: bold;
     font-size: 20px;
@@ -416,7 +420,7 @@ div.Song_Picture {
 
 }
 
-div.Title {
+div.Result_Heading {
     width: 120px;
     margin-top: 10px;
     margin-left: 10px;
@@ -427,7 +431,7 @@ div.Title {
     font-weight: bold;
 }
 
-div.Search_Artist {
+div.Result_SubHeading {
     font-size: 11px;
     color: #3a3a3a;
     font-weight: 600;
@@ -439,7 +443,11 @@ div.Search_Artist {
 }
 div.Results {
     float: left;
-    height: 200px;
-    width: 150px;
+    height: 125px;
+    width: 135px;
     }
 /*div.result broke the footer plz fix*/
+
+div.Results_Spacer {
+    height: 115px;
+}
