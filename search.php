@@ -11,12 +11,25 @@
 				<div class="Search_Results_Container">
 					<div class="Results_Container_Group">
 						<div class="Search_Group">Songs</div>
-						<div class="Result">
+						<div class="Results">
 							<div style="background-image: url(client/images/sm.jpg);" class="Song_Picture"></div>
 							<div class="Title">Sicko Mode</div>
 							<div class="Search_Artist">Travis Scott</div>
 						</div>
-						<div class="Result">
+						<div class="Results">
+							<div style="background-image: url(client/images/sm.jpg);" class="Song_Picture"></div>
+							<div class="Title">Sicko Mode</div>
+							<div class="Song_Artist Search_Artist">Travis Scott</div>
+						</div>
+					</div>
+					<div class="Results_Container_Group">
+						<div class="Search_Group">Albums</div>
+						<div class="Results">
+							<div style="background-image: url(client/images/sm.jpg);" class="Song_Picture"></div>
+							<div class="Title">Sicko Mode</div>
+							<div class="Search_Artist">Travis Scott</div>
+						</div>
+						<div class="Results">
 							<div style="background-image: url(client/images/sm.jpg);" class="Song_Picture"></div>
 							<div class="Title">Sicko Mode</div>
 							<div class="Song_Artist Search_Artist">Travis Scott</div>
