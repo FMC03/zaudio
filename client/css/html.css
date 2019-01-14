@@ -289,6 +289,7 @@ div.Client_Currently_Playing{
     z-index: 3;
     bottom: 65px;
     height: 60px;
+    left: 0px;
 }
 
 div.Client_Currently_Playing div.Currently_Playing_Container{
@@ -364,6 +365,7 @@ footer.Client_Footer_Container{
     padding-bottom: 10px;
     position: fixed;
     bottom: 0px;
+    left: 0px;
     z-index: 2;
     height: 40px;
     box-shadow: 0px -60px 80px #0000001c;
@@ -392,6 +394,9 @@ div.Footer_Options_Container a.Footer_Option i.Search_Option{
     font-size: 30px;
 }
 
+/*search css  |
+              v*/
+
 div.Search_Results_Container{
     float:left;
 }
@@ -417,7 +422,6 @@ div.Song_Picture {
     margin-top: 30px;
     margin-left: 20px;
     margin-right: 20px;
-
 }
 
 div.Result_Heading {
@@ -441,12 +445,12 @@ div.Result_SubHeading {
     margin-top: 5px;
     width: 120px;
 }
+
 div.Results {
     float: left;
     height: 125px;
     width: 135px;
     }
-/*div.result broke the footer plz fix*/
 
 div.Results_Spacer {
     height: 115px;
