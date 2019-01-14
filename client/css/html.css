@@ -369,6 +369,7 @@ footer.Client_Footer_Container{
     z-index: 2;
     height: 40px;
     box-shadow: 0px -60px 80px #0000001c;
+    left: 0px;
 }
 
 footer.Client_Footer_Container div.Footer_Options_Container{
@@ -410,6 +411,8 @@ div.Search_Group {
     padding-left: 20px;
     font-weight: bold;
     font-size: 20px;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 div.Song_Picture {
