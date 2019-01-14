@@ -289,6 +289,7 @@ div.Client_Currently_Playing{
     z-index: 3;
     bottom: 65px;
     height: 60px;
+    left: 0px;
 }
 
 div.Client_Currently_Playing div.Currently_Playing_Container{
@@ -367,6 +368,7 @@ footer.Client_Footer_Container{
     z-index: 2;
     height: 40px;
     box-shadow: 0px -60px 80px #0000001c;
+    left: 0px;
 }
 
 footer.Client_Footer_Container div.Footer_Options_Container{
@@ -405,6 +407,8 @@ div.Search_Group {
     padding-left: 20px;
     font-weight: bold;
     font-size: 20px;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 div.Song_Picture {
@@ -446,8 +450,28 @@ div.Results {
     height: 125px;
     width: 135px;
     }
-/*div.result broke the footer plz fix*/
 
 div.Results_Spacer {
     height: 115px;
+}
+
+div.Bottom_Box {
+    padding-bottom: 350px;
+}
+
+div.Playlist_Title {
+ font-family: sans-serif; 
+ font-size: 28px;
+ text-align: center;
+ font-weight: bold;  
+}
+
+div.Playlist_SubTitle {
+    font-family: sans-serif; 
+ font-size: 20px;
+ text-align: center;
+}
+
+div.Head_Spacer {
+    padding-top: 75px;
 }

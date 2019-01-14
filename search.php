@@ -144,6 +144,7 @@
 							<div class="Result_SubHeading">User123</div>
 						</div>
 					</div>
+					<div class="Bottom_Box"></div>
 				</div>
 			</div>
 		</div>
