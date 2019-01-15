@@ -148,6 +148,7 @@
 				</div>
 			</div>
 		</div>
+
 		<?php require('_includes/footer.php');?>
 	</body>
 </html>
