@@ -9,47 +9,9 @@
 					<div class="Playlist_Title">edgy playlist name</div>
 					<div class="Playlist_SubTitle">User123</div>
 				</div>
-				<!-- SPONSORED CONTAINER -->
+				<!-- Heading Spacer -->
 				<div class="Head_Spacer">
-					<!-- YOUNG THUG -->
-					<!-- <div class="Sponsored_Text_Container">
-						<b class="Sponsored_Artist_Text">YOUNG THUG</b>
-						<b class="Sponsored_Song_Text">Jeffery</b>
-					</div> -->
-					<!-- DRAKE -->
-					<!-- <div class="Sponsored_Text_Container">
-						<b class="Sponsored_Artist_Text">DRAKE</b>
-						<b class="Sponsored_Song_Text">We made it</b>
-					</div> -->
-
-					<!-- TYLER THE CREATOR -->
-					<!-- <div class="Sponsored_Text_Container">
-						<b class="Sponsored_Artist_Text">TYLER THE CREATOR</b>
-						<b class="Sponsored_Song_Text">Who dat boi</b>
-					</div> -->
-
-					<!-- ARIANA GRANDE -->
-					<!-- <div class="Sponsored_Text_Container">
-						<b class="Sponsored_Artist_Text">ARIANA GRANDE</b>
-						<b class="Sponsored_Song_Text">God is a woman</b>
-					</div> -->
-					
-
-				<!-- <div class="Home_Recommended_Albums_Container">
-					<div class="Title_Container">
-						<b class="TextStyle_Title">Recommended Albums</b>
-					</div>
-					<div class="Recommended_Alumbs_Container">
-						<div class="Recommended_Album">
-
-						</div>
-					</div>
-				</div> -->
-
-				<!-- RECOMMENDED ARTIST CONTAINER -->
 				
-
-				<!-- RECOMMENDED SONGS CONTAINER -->
 				<div class="Home_Recommended_Songs_Container">
 					<div class="Recommended_Songs_Container">
 
