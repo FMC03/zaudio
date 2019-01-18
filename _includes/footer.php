@@ -27,7 +27,7 @@
 		<a href="search.php" class="Footer_Option Search">
 			<i class="Search_Option fas fa-search"></i>
 		</a>
-		<a href="" class="Footer_Option Search">
+		<a href="login.php" class="Footer_Option Search">
 			<i class="User_Option fas fa-user-circle"></i>
 		</a>
 	</div>

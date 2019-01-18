@@ -33,7 +33,7 @@ div.Client_Page_Container{
 }
 
 /* HOME PAGE  */
-div.Client_Home_Container{
+div.Client_Container{
     height: auto;
 }
 
@@ -258,10 +258,9 @@ div.Song_Data div b.Song_Replay_Amount{
 div.Search_Bar_Container{
     display: block;
     padding: 10px;
-    border-bottom: 1px solid #e8e8e8;
     background: #ffffff;
     position: fixed;
-    width: 92%;
+    width: 93%;
     top: 0px;
 }
 
@@ -395,76 +394,17 @@ div.Footer_Options_Container a.Footer_Option i.Search_Option{
     font-size: 30px;
 }
 
-/*search css  |
-              v*/
-
-div.Search_Results_Container{
-    float:left;
+/* SEARCH CSS */
+div.Search_Result_Container{
+    padding-top: 60px;
 }
 
-div.Results_Container_Group {
-    font-family: sans-serif;
+
+/* LOGIN */
+
+div.Login_Body{
+    height: 100%;width: 100%;
 }
-
-div.Search_Group {
-    padding-top: 80px;
-    padding-left: 20px;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-div.Song_Picture {
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px #00000080;
-    background-position: center;
-    margin-top: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-div.Result_Heading {
-    width: 120px;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-align: center;
-    font-size: 14px;
-    color: #101010;
-    font-weight: bold;
-}
-
-div.Result_SubHeading {
-    font-size: 11px;
-    color: #3a3a3a;
-    font-weight: 600;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 5px;
-    width: 120px;
-}
-
-div.Results {
-    float: left;
-    height: 125px;
-    width: 135px;
-    }
-
-div.Results_Spacer {
-    height: 115px;
-}
-
-/*login*/
-
-div.Login_Body {
-background-color: white;
-height: 100%;
-width: 100%;
-}
-/*i cant figure out how to make this cover the whole page*/
 
 img.MB_LOGO_IMG {
     height: auto;
@@ -495,7 +435,7 @@ img.ZAUDIO_IMG {
 
 button.Login_Button {
     background-color: #159b25;
-    color: white;
+    color: #ffffff;
     border-radius: 50px;
     height: 50px;
     width: 50%;
@@ -504,4 +444,5 @@ button.Login_Button {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border: none;
 }
