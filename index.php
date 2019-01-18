@@ -272,5 +272,6 @@
 			</div>
 		</div>
 		<?php require('_includes/footer.php');?>
+		<script src="client/js/audioplayer.js"></script>
 	</body>
 </html>
