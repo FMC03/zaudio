@@ -456,3 +456,52 @@ div.Results {
 div.Results_Spacer {
     height: 115px;
 }
+
+/*login*/
+
+div.Login_Body {
+background-color: #5e5e5e;
+height: 100%;
+width: 100%;
+}
+/*i cant figure out how to make this cover the whole page*/
+
+img.MB_LOGO_IMG {
+    height: auto;
+    width: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.MB_TXT_IMG {
+    height: auto;
+    width: 45%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+img.ZAUDIO_IMG {
+    height: auto;
+    width: 45%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+button.Login_Button {
+    background-color: #159b25;
+    color: white;
+    border-radius: 50px;
+    height: 50px;
+    width: 50%;
+    font-size: 20px;
+    font-family: sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
