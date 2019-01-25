@@ -19,7 +19,10 @@
 <script>
 
 
-		var numbers = [4,23,98];
+		var numbers = {
+			key1 : 'value 1',
+			key2 : 'value 2'
+		}
 
 
 		// DEFINE OUR DATA OBJECT
@@ -29,7 +32,6 @@
 														
 							// songs[0]
 							{
-
 								song: "Gucci Gang",
 								artist : "Lil Pump",
 								img: 'client/images/gc.jpg',
@@ -53,7 +55,7 @@
 								artist: "Lil Uzi Vert",
 								img : 'client/images/xotl.jpg',
 								likes: "2k+",
-								repeats: "5k+"
+								repeats: "5k+",
 							}
 						];
 
@@ -63,40 +65,37 @@
 		var html = '';
 
 
-		// go through the list of songs - index at 0,1,2...
 		for(var i = 0; i < songs.length; i++){
 
-
-			// get the song for our current index
 			var song = songs[i];
+			
+			html 	+= '<div class="song">' + 	
+							'<h3>' + song.song	 + '</h1>' +
+							'<br /><i>' + song.artist	 + '</i>' +
+						'</div>';
 
-			html += 		'<div class="Recommended_Song">' +
-								'<div style="background-image: url(\'../' + song.img + '\');"  class="Song_IMG"></div>' +
-								'<div class="Song_Information">' +
-									'<b class="Song_Name">' + song.song + '</b>' +
-									'<b class="Song_Artist">' + song.artist + '</b>' +
-									'<div class="Song_Data">' +
-										'<div class="Liked">' +
-											'<img src="../client/images/icons/liked.png" />' +
-											'<b class="Song_Liked_Amount">' + song.likes + '</b>' +
-										'</div>' +
-										'<div class="Replay">' +
-											'<img src="../client/images/icons/replays.png" />' +
-											'<b class="Song_Replay_Amount">' + song.repeats + '</b>' +
-										'</div>' +
-									'</div>' +
-								'</div>' +
-							'</div>' + "\n\n\n";
 		}
 
 
+		
+
+		
 
 	
 		// WAIT UNTIL THE PAGE HAS LOADED
 		$(function(){
 
+			
 			// AND THEN RUN THIS...
-			$('#html_frame').html(html);
+			var element = $('#html_frame');
+
+			element.html(html);
+
+			element.css('color', 'red');
+
+			element.click(function(){
+				alert('click!!!')
+			})
 
 		});
 
@@ -106,9 +105,7 @@
 </head>
 <body>
 	<div id="html_frame"></div>
-
+banana
 	
-	Banana
-
 </body>
 </html>
