@@ -33,7 +33,7 @@ div.Client_Page_Container{
 }
 
 /* HOME PAGE  */
-div.Client_Home_Container{
+div.Client_Container{
     height: auto;
 }
 
@@ -230,6 +230,10 @@ div.Song_Data div img{
     float: left;
 }
 
+div.Song_Data div.Replay img{
+    width: 15px;
+}
+
 div.Song_Data div{
     margin-right: 5px;
 }
@@ -254,10 +258,9 @@ div.Song_Data div b.Song_Replay_Amount{
 div.Search_Bar_Container{
     display: block;
     padding: 10px;
-    border-bottom: 1px solid #e8e8e8;
     background: #ffffff;
     position: fixed;
-    width: 92%;
+    width: 93%;
     top: 0px;
 }
 
@@ -285,6 +288,7 @@ div.Client_Currently_Playing{
     z-index: 3;
     bottom: 65px;
     height: 60px;
+    left: 0px;
 }
 
 div.Client_Currently_Playing div.Currently_Playing_Container{
@@ -316,8 +320,8 @@ div.Client_Currently_Playing div div.Song_Information b.Song_Playing{
 
 div.Client_Currently_Playing div div.Song_IMG{
     background-size: cover;
-    width: 35px;
-    height: 35px;
+    width: 55px;
+    height: 55px;
     border-radius: 50px;
     background-position: center;
     box-shadow: 0px 0px 10px #00000080;
@@ -360,9 +364,11 @@ footer.Client_Footer_Container{
     padding-bottom: 10px;
     position: fixed;
     bottom: 0px;
+    left: 0px;
     z-index: 2;
     height: 40px;
     box-shadow: 0px -60px 80px #0000001c;
+    left: 0px;
 }
 
 footer.Client_Footer_Container div.Footer_Options_Container{
@@ -386,4 +392,57 @@ div.Footer_Options_Container a.Footer_Option i{
 
 div.Footer_Options_Container a.Footer_Option i.Search_Option{
     font-size: 30px;
+}
+
+/* SEARCH CSS */
+div.Search_Result_Container{
+    padding-top: 60px;
+}
+
+
+/* LOGIN */
+
+div.Login_Body{
+    height: 100%;width: 100%;
+}
+
+img.MB_LOGO_IMG {
+    height: auto;
+    width: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.MB_TXT_IMG {
+    height: auto;
+    width: 45%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+img.ZAUDIO_IMG {
+    height: auto;
+    width: 45%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+button.Login_Button {
+    background-color: #159b25;
+    color: #ffffff;
+    border-radius: 50px;
+    height: 50px;
+    width: 50%;
+    font-size: 20px;
+    font-family: sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
 }

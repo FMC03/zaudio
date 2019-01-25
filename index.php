@@ -88,7 +88,7 @@
 					</div>
 					<div class="Recommended_Songs_Container">
 
-						<div class="Recommended_Song Lil Pump - Gucci Gang">
+						<div class="Recommended_Song">
 							<div style="background-image: url(client/images/gc.jpg);"  class="Song_IMG"></div>
 							<div class="Song_Information">								
 								<b class="Song_Name">Gucci Gang</b>
@@ -106,7 +106,7 @@
 							</div>
 						</div>
 
-						<div class="Recommended_Song Childish Gambino - Feels Like Summer">
+						<div class="Recommended_Song">
 							<div style="background-image: url(client/images/fls.png);"  class="Song_IMG"></div>
 							<div class="Song_Information">
 								<b class="Song_Name">Feels Like Summer</b>
@@ -124,7 +124,7 @@
 							</div>
 						</div>
 
-						<div class="Recommended_Song Lil Uzi Vert - XO Tour Life">
+						<div class="Recommended_Song">
 							<div style="background-image: url(client/images/xotl.jpg);"  class="Song_IMG"></div>
 							<div class="Song_Information">
 								<b class="Song_Name">XO Tour Lif3</b>
@@ -142,7 +142,7 @@
 							</div>
 						</div>
 
-						<div class="Recommended_Song Lil Pump - Gucci Gang">
+						<div class="Recommended_Song">
 							<div style="background-image: url(client/images/gp.jpg);"  class="Song_IMG"></div>
 							<div class="Song_Information">
 								<b class="Song_Name">God's Plan</b>
@@ -160,7 +160,7 @@
 							</div>
 						</div>
 
-						<div class="Recommended_Song Travis Scott - Sicko Mode">
+						<div class="Recommended_Song">
 							<div style="background-image: url(client/images/sm.jpg);"  class="Song_IMG"></div>
 							<div class="Song_Information">
 								<b class="Song_Name">Sicko Mode</b>
@@ -178,7 +178,7 @@
 							</div>
 						</div>
 
-						<div class="Recommended_Song 21 Savage - Bank Account">
+						<div class="Recommended_Song">
 							<div style="background-image: url(client/images/ba.jpg);"  class="Song_IMG"></div>
 							<div class="Song_Information">
 								<b class="Song_Name">Bank Account</b>
@@ -196,7 +196,7 @@
 							</div>
 						</div>
 
-						<div class="Recommended_Song XXXTentacion - SAD!">
+						<div class="Recommended_Song">
 							<div style="background-image: url(client/images/sad.jpg);"  class="Song_IMG"></div>
 							<div class="Song_Information">
 								<b class="Song_Name">SAD!</b>
@@ -214,7 +214,7 @@
 							</div>
 						</div>
 
-						<div class="Recommended_Song Juice WRLD - Lucid Dreams">
+						<div class="Recommended_Song">
 							<div style="background-image: url(client/images/ld.jpg);"  class="Song_IMG"></div>
 							<div class="Song_Information">
 								<b class="Song_Name">Lucid Dreams</b>
@@ -232,7 +232,7 @@
 							</div>
 						</div>
 
-						<div class="Recommended_Song Ariana Grande - God Is A Woman">
+						<div class="Recommended_Song">
 							<div style="background-image: url(client/images/ariana.jpg);"  class="Song_IMG"></div>
 							<div class="Song_Information">
 								<b class="Song_Name">God Is A Woman</b>
@@ -250,7 +250,7 @@
 							</div>
 						</div>
 
-						<div class="Recommended_Song Tyler The Creator - Who Dat Boy">
+						<div class="Recommended_Song">
 							<div style="background-image: url(client/images/ttcfb.png);"  class="Song_IMG"></div>
 							<div class="Song_Information">
 								<b class="Song_Name">Who Dat Boy</b>
@@ -272,5 +272,6 @@
 			</div>
 		</div>
 		<?php require('_includes/footer.php');?>
+		<script src="client/js/audioplayer.js"></script>
 	</body>
 </html>
