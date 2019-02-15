@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		
+		// <AUDIO> REFRENCE
+		// https://www.w3schools.com/tags/ref_av_dom.asp
+
+
+
+		function changeSong(filename){
+			var src_element = document.getElementById("source_ctrl")
+			src_element.src = filename;
+
+
+			var audio_player = document.getElementById("audio_player");
+			audio_player.load(); 
+
+
+			// DISPLAY INFORMATION ABOUT THE NEW TRACK
+			$('#display_song_name').html(filename);
+
+
+			// HANDLE "EVENTS"
+			audio_player.onended = function() {
+			    alert("The audio has ended");
+			};
+
+			audio_player.ontimeupdate = function(){
+				console.log(audio_player.currentTime)
+				$('#display_current_place').html(audio_player.currentTime);	
+			}
+
+
+		}
+
+
+	</script>
+</head>
+<body>
+	
+	<ul>
+		<li onclick="changeSong('song1.mp3')">SONG ONE</li>
+
+		<li onclick="changeSong('song2.mp3')">SONG TWO</li>
+
+		<li onclick="changeSong('song3.mp3')">SONG THREE</li>
+	</ul>
+
+
+
+	<audio controls id="audio_player">
+
+  		<source id="source_ctrl" src="song1.mp3" type="audio/mpeg">
+	
+	</audio>
+
+
+	<div id="my_audio_player">
+
+		<b>Song Name:</b>
+		<br /><span id="display_song_name"></span>
+
+		<br /><br />
+
+		<b>Current Place:</b>
+		<br /><span id="display_current_place"></span>
+
+	</div>
+
+	
+
+</body>
+</html>
