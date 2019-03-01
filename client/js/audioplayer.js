@@ -1,1 +1,0 @@
-alert('ur mom :crying_laughing_emoji:');

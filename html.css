@@ -1,0 +1,464 @@
+ /* BODY AND HTML FIXER */
+body, html{
+    margin: 0px;
+    padding: 0px;
+    background: #ffffff;
+    outline: none;
+    min-width: 300px;
+    user-select: none;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+/* HEADER CONTAINER */
+header.Client_Header_Container{
+    width: 100%;
+    display: inline-block;
+    background: #ffffff;
+    border-bottom: 1px solid #ececec;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+/* PAGE CONTAINER */
+div.Client_Page_Container{
+    height: auto;
+    padding: 5px;
+    padding-bottom: 120px;
+}
+
+/* HOME PAGE  */
+div.Client_Container{
+    height: auto;
+}
+
+div.Home_Sponsored_Container{
+    padding: 5px;
+    padding-bottom: 10px;
+}
+
+/* SPONSORED CONTAINER */
+div.Client_Home_Container div.Home_Sponsored_Container{
+    padding: 5px;
+}
+
+div.Home_Sponsored_Container div.Sponsored_Text_Container{
+    position: relative;
+    top: 5px;
+    left: 5px;
+    height: 0px;    
+}
+
+div.Sponsored_Text_Container b.Sponsored_Artist_Text{
+    display: block;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 31px;
+    height: 30px;
+    text-shadow: 0px 0px 4px #000000d6;
+}
+
+div.Sponsored_Text_Container b.Sponsored_Song_Text{
+    display: block;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding-left: 10px;
+    text-shadow: 0px 0px 4px #000000d6;
+}
+
+div.Home_Sponsored_Container div.Sponsored_ViewMore{
+    height: 0px;
+    position: relative;
+    bottom: 20px;
+    padding-right: 10px;
+}
+
+div.Home_Sponsored_Container div.Sponsored_Circles{
+    height: 0px;
+    position: relative;
+    bottom: 15px;
+    padding-right: 10px;
+    width: 50px;
+    margin: auto;
+}
+
+div.Sponsored_Circles div.Circle_{
+    float: left;
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+    background: #bdbdbd;
+    margin: 2px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    box-shadow: 0px 0px 10px #000000;
+}
+
+div.Sponsored_Circles div._Selected{
+    background: #ffffff;
+    box-shadow: 0px 0px 10px #ffffff;
+}
+
+div.Sponsored_Artist_IMG{
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #00000080;
+    background-position: center;
+}
+
+div.Sponsored_ViewMore b.ViewMore{
+    display: block;
+    font-family: sans-serif;
+    color: #ffffff;
+    font-size: 12px;
+    float: right;
+    border-radius: 5px;
+    text-shadow: 0px 0px 4px #000000d6;
+}
+
+/* RECOMMENDED ALBUMS */
+div.Recommended_Artist_Container div.Recommended_Artists_Container{
+    display: block;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+
+div.Recommended_Artists_Container::-webkit-scrollbar{
+    display: none;
+}
+
+div.Client_Home_Container div div.Title_Container{
+    padding: 5px;
+}
+
+div.Client_Home_Container div div b.TextStyle_Title{
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #262626;
+    display: block;
+}
+
+div.Client_Home_Container div div b.TextStyle_BigTitle{
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #262626;
+    display: block;
+}
+
+div.Recommended_Artist{
+    display: inline-block;
+    margin-left: 5px;
+}
+
+div.Recommended_Artist div.Artist_IMG{
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-position: center;
+    box-shadow: 0px 0px 10px #00000052;
+}
+
+/* Recommended SONGS */
+div.Recommended_Songs_Container{
+    padding: 10px;
+}
+
+div.Recommended_Songs_Container div.Recommended_Song div.Song_IMG{
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #00000080;
+    background-position: center;
+}
+
+div.Recommended_Songs_Container div div{
+    float: left;
+    margin-top: 1px;
+}
+
+div.Recommended_Songs_Container div.Recommended_Song {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+div.Recommended_Songs_Container div.Song_Information{
+    padding-left: 10px;
+    padding-top: 4px;
+    display: inline-block;
+}
+
+div.Recommended_Songs_Container div.Song_Information b{
+    display: block;
+    font-family: sans-serif;
+}
+
+div.Song_Information b.Song_Name{
+    font-size: 14px;
+    color: #343434;
+}
+
+div.Song_Information b.Song_Artist{
+    font-size: 11px;
+    color: #161616;
+    font-weight: 600;
+}
+
+div.Song_Information b.Song_Trending{
+    font-size: 10px;
+    color: #E91E63;
+    font-weight: 600;
+}
+
+div.Song_Data div img{
+    width: 12px;
+    height: 10px;
+    padding-top: 2px;
+    float: left;
+}
+
+div.Song_Data div.Replay img{
+    width: 15px;
+}
+
+div.Song_Data div{
+    margin-right: 5px;
+}
+
+div.Song_Data div b.Song_Liked_Amount{
+    float: left;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-top: 1px;
+    color: #ff3a3a;
+}
+
+div.Song_Data div b.Song_Replay_Amount{
+    float: left;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-top: 1px;
+    color: #169b1b;
+}
+
+/* SEARCH CONTAINER */
+div.Search_Bar_Container{
+    display: block;
+    padding: 10px;
+    background: #ffffff;
+    position: fixed;
+    width: 93%;
+    top: 0px;
+}
+
+div.Search_Bar_Container input.Search_Input{
+    width: 95%;
+    height: 100%;
+    border-radius: 5px;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    padding: 10px;
+    outline: none;
+    font-size: 13px;
+    color: #5f5f5f;
+    font-weight: 500;
+}
+
+
+/* CURRENTLY PLAYING CONTAINER */
+div.Client_Currently_Playing{
+    width: 100%;
+    display: inline-block;
+    background: #ffffff;
+    border-top: 1px solid #e8e8e8;
+    position: fixed;
+    z-index: 3;
+    bottom: 65px;
+    height: 60px;
+    left: 0px;
+}
+
+div.Client_Currently_Playing div.Currently_Playing_Container{
+    padding: 5px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+div.Client_Currently_Playing div div{
+    float: left;
+}
+
+div.Client_Currently_Playing div div.Song_Information{
+    padding-left: 10px;
+    padding-top: 4px;
+    display: inline-block;
+}
+
+div.Client_Currently_Playing div div.Song_Information b{
+    display: block;
+    font-family: sans-serif;
+}
+
+div.Client_Currently_Playing div div.Song_Information b.Song_Playing{
+    font-size: 9px;
+    color: #696969;
+}
+
+div.Client_Currently_Playing div div.Song_IMG{
+    background-size: cover;
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    background-position: center;
+    box-shadow: 0px 0px 10px #00000080;
+    border: 1px solid #d4d4d4;
+}
+
+div.Client_Currently_Playing div div.Song_Options{
+    float: right;
+    padding-right: 20px;
+    padding-top: 5px;
+    display: inline-block;
+}
+
+div.Client_Currently_Playing div div.Song_Options a{
+   text-decoration: none;
+}
+
+div.Client_Currently_Playing div div.Song_Options a i{
+   text-decoration: none;
+   font-size: 23px;
+   color: #858585;
+}
+
+div.Client_Currently_Playing div.Song_Options a.Action{
+    padding-top: 10px;
+}
+
+div.Client_Currently_Playing div.Song_Options a.Action i{
+    font-size: 32px;
+    color: #656565;
+    background-position: center;
+}
+
+/* FOOTER CONTAINER */
+footer.Client_Footer_Container{
+    width: 100%;
+    display: inline-block;
+    background: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 2;
+    height: 40px;
+    box-shadow: 0px -60px 80px #0000001c;
+    left: 0px;
+}
+
+footer.Client_Footer_Container div.Footer_Options_Container{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+footer.Client_Footer_Container div.Footer_Options_Container a.Footer_Option{
+    width: 30%;
+    height: 100%;
+    padding: 20px;
+    text-decoration: none;
+}
+
+div.Footer_Options_Container a.Footer_Option i{   
+    text-decoration: none;  
+    font-size: 25px;  
+    color: #545454;
+}
+
+div.Footer_Options_Container a.Footer_Option i.Search_Option{
+    font-size: 30px;
+}
+
+/* SEARCH CSS */
+div.Search_Result_Container{
+    padding-top: 60px;
+}
+
+
+/* LOGIN */
+div.Login_Body{
+    height: 100%;
+    width: 100%;
+}
+
+img.MB_LOGO_IMG {
+    height: auto;
+    width: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.MB_TXT_IMG {
+    height: auto;
+    width: 45%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+img.ZAUDIO_IMG {
+    height: auto;
+    width: 45%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+button.Login_Button {
+    background-color: #159b25;
+    color: #ffffff;
+    border-radius: 50px;
+    height: 50px;
+    width: 50%;
+    font-size: 20px;
+    font-family: sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+}
+
+
+div.Title_Container{
+    display: block;
+    padding: 5px;
+}
+
+div.Title_Container b.TextStyle_Title{   
+    font-family: sans-serif;   
+    color: #1f1f1f;
+}

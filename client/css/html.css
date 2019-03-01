@@ -13,7 +13,7 @@ body::-webkit-scrollbar{
 }
 
 /* HEADER CONTAINER */
-header.Client_Header_Container{
+header.Client-Header-Container{
     width: 100%;
     display: inline-block;
     background: #ffffff;
@@ -26,30 +26,35 @@ header.Client_Header_Container{
 }
 
 /* PAGE CONTAINER */
-div.Client_Page_Container{
+div.Client-Page-Container{
     height: auto;
     padding: 5px;
-    padding-bottom: 120px;
+    padding-bottom: 150px;
 }
 
 /* HOME PAGE  */
-div.Client_Container{
+div.Client-Container{
     height: auto;
 }
 
+div.Home-Sponsored-Container{
+    padding: 5px;
+    padding-bottom: 10px;
+}
+
 /* SPONSORED CONTAINER */
-div.Client_Home_Container div.Home_Sponsored_Container{
+div.Client-Home-Container div.Home-Sponsored-Container{
     padding: 5px;
 }
 
-div.Home_Sponsored_Container div.Sponsored_Text_Container{
+div.Home-Sponsored-Container div.Sponsored-Text-Container{
     position: relative;
     top: 5px;
     left: 5px;
     height: 0px;    
 }
 
-div.Sponsored_Text_Container b.Sponsored_Artist_Text{
+div.Sponsored-Text-Container b.Sponsored-Artist-Text{
     display: block;
     color: #ffffff;
     font-family: sans-serif;
@@ -59,7 +64,7 @@ div.Sponsored_Text_Container b.Sponsored_Artist_Text{
     text-shadow: 0px 0px 4px #000000d6;
 }
 
-div.Sponsored_Text_Container b.Sponsored_Song_Text{
+div.Sponsored-Text-Container b.Sponsored-Song-Text{
     display: block;
     color: #ffffff;
     font-family: sans-serif;
@@ -69,14 +74,14 @@ div.Sponsored_Text_Container b.Sponsored_Song_Text{
     text-shadow: 0px 0px 4px #000000d6;
 }
 
-div.Home_Sponsored_Container div.Sponsored_ViewMore{
+div.Home-Sponsored-Container div.Sponsored-ViewMore{
     height: 0px;
     position: relative;
     bottom: 20px;
     padding-right: 10px;
 }
 
-div.Home_Sponsored_Container div.Sponsored_Circles{
+div.Home-Sponsored-Container div.Sponsored-Circles{
     height: 0px;
     position: relative;
     bottom: 15px;
@@ -85,7 +90,7 @@ div.Home_Sponsored_Container div.Sponsored_Circles{
     margin: auto;
 }
 
-div.Sponsored_Circles div.Circle_{
+div.Sponsored-Circles div.Circle_{
     float: left;
     width: 6px;
     height: 6px;
@@ -97,12 +102,12 @@ div.Sponsored_Circles div.Circle_{
     box-shadow: 0px 0px 10px #000000;
 }
 
-div.Sponsored_Circles div._Selected{
+div.Sponsored-Circles div._Selected{
     background: #ffffff;
     box-shadow: 0px 0px 10px #ffffff;
 }
 
-div.Sponsored_Artist_IMG{
+div.Sponsored-Artist-IMG{
     background-size: cover;
     width: 100%;
     height: 200px;
@@ -111,7 +116,7 @@ div.Sponsored_Artist_IMG{
     background-position: center;
 }
 
-div.Sponsored_ViewMore b.ViewMore{
+div.Sponsored-ViewMore b.ViewMore{
     display: block;
     font-family: sans-serif;
     color: #ffffff;
@@ -122,7 +127,7 @@ div.Sponsored_ViewMore b.ViewMore{
 }
 
 /* RECOMMENDED ALBUMS */
-div.Recommended_Artist_Container div.Recommended_Artists_Container{
+div.Recommended-Artist-Container div.Recommended-Artists-Container{
     display: block;
     white-space: nowrap;
     overflow-x: scroll;
@@ -135,34 +140,34 @@ div.Recommended_Artist_Container div.Recommended_Artists_Container{
     overflow: -moz-scrollbars-none;
 }
 
-div.Recommended_Artists_Container::-webkit-scrollbar{
+div.Recommended-Artists-Container::-webkit-scrollbar{
     display: none;
 }
 
-div.Client_Home_Container div div.Title_Container{
+div.Client-Home-Container div div.Title-Container{
     padding: 5px;
 }
 
-div.Client_Home_Container div div b.TextStyle_Title{
+div.Client-Home-Container div div b.TextStyle-Title{
     font-family: sans-serif;
     font-weight: 600;
     color: #262626;
     display: block;
 }
 
-div.Client_Home_Container div div b.TextStyle_BigTitle{
+div.Client-Home-Container div div b.TextStyle-BigTitle{
     font-family: sans-serif;
     font-weight: 600;
     color: #262626;
     display: block;
 }
 
-div.Recommended_Artist{
+div.Recommended-Artist{
     display: inline-block;
     margin-left: 5px;
 }
 
-div.Recommended_Artist div.Artist_IMG{
+div.Recommended-Artist div.Artist-IMG{
     background-size: cover;
     width: 46px;
     height: 46px;
@@ -172,11 +177,11 @@ div.Recommended_Artist div.Artist_IMG{
 }
 
 /* Recommended SONGS */
-div.Recommended_Songs_Container{
+div.Recommended-Songs-Container{
     padding: 10px;
 }
 
-div.Recommended_Songs_Container div.Recommended_Song div.Song_IMG{
+div.Recommended-Songs-Container div.Recommended-Song div.Song-IMG{
     background-size: cover;
     width: 50px;
     height: 50px;
@@ -185,60 +190,60 @@ div.Recommended_Songs_Container div.Recommended_Song div.Song_IMG{
     background-position: center;
 }
 
-div.Recommended_Songs_Container div div{
+div.Recommended-Songs-Container div div{
     float: left;
     margin-top: 1px;
 }
 
-div.Recommended_Songs_Container div.Recommended_Song {
+div.Recommended-Songs-Container div.Recommended-Song {
     height: 50px;
     margin-bottom: 10px;
 }
 
-div.Recommended_Songs_Container div.Song_Information{
+div.Recommended-Songs-Container div.Song-Information{
     padding-left: 10px;
     padding-top: 4px;
     display: inline-block;
 }
 
-div.Recommended_Songs_Container div.Song_Information b{
+div.Recommended-Songs-Container div.Song-Information b{
     display: block;
     font-family: sans-serif;
 }
 
-div.Song_Information b.Song_Name{
+div.Song-Information b.Song-Name{
     font-size: 14px;
-    color: #101010;
+    color: #343434;
 }
 
-div.Song_Information b.Song_Artist{
+div.Song-Information b.Song-Artist{
     font-size: 11px;
-    color: #3a3a3a;
+    color: #161616;
     font-weight: 600;
 }
 
-div.Song_Information b.Song_Trending{
+div.Song-Information b.Song-Trending{
     font-size: 10px;
     color: #E91E63;
     font-weight: 600;
 }
 
-div.Song_Data div img{
+div.Song-Data div img{
     width: 12px;
     height: 10px;
     padding-top: 2px;
     float: left;
 }
 
-div.Song_Data div.Replay img{
+div.Song-Data div.Replay img{
     width: 15px;
 }
 
-div.Song_Data div{
+div.Song-Data div{
     margin-right: 5px;
 }
 
-div.Song_Data div b.Song_Liked_Amount{
+div.Song-Data div b.Song-Liked-Amount{
     float: left;
     font-size: 11px;
     padding-left: 3px;
@@ -246,7 +251,7 @@ div.Song_Data div b.Song_Liked_Amount{
     color: #ff3a3a;
 }
 
-div.Song_Data div b.Song_Replay_Amount{
+div.Song-Data div b.Song-Replay-Amount{
     float: left;
     font-size: 11px;
     padding-left: 3px;
@@ -255,7 +260,7 @@ div.Song_Data div b.Song_Replay_Amount{
 }
 
 /* SEARCH CONTAINER */
-div.Search_Bar_Container{
+div.Search-Bar-Container{
     display: block;
     padding: 10px;
     background: #ffffff;
@@ -264,7 +269,7 @@ div.Search_Bar_Container{
     top: 0px;
 }
 
-div.Search_Bar_Container input.Search_Input{
+div.Search-Bar-Container input.Search-Input{
     width: 95%;
     height: 100%;
     border-radius: 5px;
@@ -279,134 +284,133 @@ div.Search_Bar_Container input.Search_Input{
 
 
 /* CURRENTLY PLAYING CONTAINER */
-div.Client_Currently_Playing{
+div.Client-Currently-Playing{
     width: 100%;
     display: inline-block;
     background: #ffffff;
     border-top: 1px solid #e8e8e8;
     position: fixed;
     z-index: 3;
-    bottom: 65px;
+    bottom: 75px;
     height: 60px;
     left: 0px;
 }
 
-div.Client_Currently_Playing div.Currently_Playing_Container{
+div.Client-Currently-Playing div.Currently-Playing-Container{
     padding: 5px;
     padding-top: 10px;
     padding-left: 15px;
     padding-right: 10px;
 }
 
-div.Client_Currently_Playing div div{
+div.Client-Currently-Playing div div{
     float: left;
 }
 
-div.Client_Currently_Playing div div.Song_Information{
+div.Client-Currently-Playing div div.Song-Information{
     padding-left: 10px;
     padding-top: 4px;
     display: inline-block;
 }
 
-div.Client_Currently_Playing div div.Song_Information b{
+div.Client-Currently-Playing div div.Song-Information b{
     display: block;
     font-family: sans-serif;
 }
 
-div.Client_Currently_Playing div div.Song_Information b.Song_Playing{
+div.Client-Currently-Playing div div.Song-Information b.Song-Playing{
     font-size: 9px;
     color: #696969;
 }
 
-div.Client_Currently_Playing div div.Song_IMG{
+div.Client-Currently-Playing div div.Song-IMG{
     background-size: cover;
     width: 55px;
     height: 55px;
-    border-radius: 50px;
+    border-radius: 5px;
     background-position: center;
     box-shadow: 0px 0px 10px #00000080;
     border: 1px solid #d4d4d4;
 }
 
-div.Client_Currently_Playing div div.Song_Options{
+div.Client-Currently-Playing div div.Song-Options{
     float: right;
     padding-right: 20px;
     padding-top: 5px;
     display: inline-block;
 }
 
-div.Client_Currently_Playing div div.Song_Options a{
+div.Client-Currently-Playing div div.Song-Options a{
    text-decoration: none;
 }
 
-div.Client_Currently_Playing div div.Song_Options a i{
+div.Client-Currently-Playing div div.Song-Options a i{
    text-decoration: none;
-   font-size: 23px;
-   color: #858585;
+   font-size: 28px;
+   color: #626262;
 }
 
-div.Client_Currently_Playing div.Song_Options a.Action{
+div.Client-Currently-Playing div.Song-Options a.Action{
     padding-top: 10px;
 }
 
-div.Client_Currently_Playing div.Song_Options a.Action i{
+div.Client-Currently-Playing div.Song-Options a.Action i{
     font-size: 32px;
-    color: #656565;
+    color: #535353;
     background-position: center;
 }
 
 /* FOOTER CONTAINER */
-footer.Client_Footer_Container{
+footer.Client-Footer-Container{
     width: 100%;
     display: inline-block;
     background: #ffffff;
-    padding-top: 15px;
+    padding-top: 25px;
     padding-bottom: 10px;
     position: fixed;
     bottom: 0px;
-    left: 0px;
     z-index: 2;
     height: 40px;
-    box-shadow: 0px -60px 80px #0000001c;
     left: 0px;
+    border-top: 1px solid #dfdfdf;
 }
 
-footer.Client_Footer_Container div.Footer_Options_Container{
+footer.Client-Footer-Container div.Footer-Options-Container{
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
 }
 
-footer.Client_Footer_Container div.Footer_Options_Container a.Footer_Option{
+footer.Client-Footer-Container div.Footer-Options-Container a.Footer-Option{
     width: 30%;
     height: 100%;
     padding: 20px;
     text-decoration: none;
 }
 
-div.Footer_Options_Container a.Footer_Option i{   
+div.Footer-Options-Container a.Footer-Option i{   
     text-decoration: none;  
     font-size: 25px;  
     color: #545454;
 }
 
-div.Footer_Options_Container a.Footer_Option i.Search_Option{
+div.Footer-Options-Container a.Footer-Option i.Search-Option{
     font-size: 30px;
 }
 
 /* SEARCH CSS */
-div.Search_Result_Container{
+div.Search-Result-Container{
     padding-top: 60px;
 }
 
 
 /* LOGIN */
-
-div.Login_Body{
-    height: 100%;width: 100%;
+div.Login-Body{
+    height: 100%;
+    width: 100%;
 }
 
-img.MB_LOGO_IMG {
+img.MB-LOGO-IMG {
     height: auto;
     width: 35%;
     display: block;
@@ -414,7 +418,7 @@ img.MB_LOGO_IMG {
     margin-right: auto;
 }
 
-img.MB_TXT_IMG {
+img.MB-TXT-IMG {
     height: auto;
     width: 45%;
     display: block;
@@ -423,7 +427,7 @@ img.MB_TXT_IMG {
     padding-top: 20px;
 }
 
-img.ZAUDIO_IMG {
+img.ZAUDIO-IMG {
     height: auto;
     width: 45%;
     display: block;
@@ -433,7 +437,7 @@ img.ZAUDIO_IMG {
     margin-bottom: 20px;
 }
 
-button.Login_Button {
+button.Login-Button {
     background-color: #159b25;
     color: #ffffff;
     border-radius: 50px;
@@ -445,4 +449,15 @@ button.Login_Button {
     margin-left: auto;
     margin-right: auto;
     border: none;
+}
+
+
+div.Title-Container{
+    display: block;
+    padding: 5px;
+}
+
+div.Title-Container b.TextStyle-Title{   
+    font-family: sans-serif;   
+    color: #1f1f1f;
 }
