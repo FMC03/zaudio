@@ -4,6 +4,8 @@
 	<title>LMAO</title>
 </head>
 <body>
-	<img class="Sprite" src="client/images/icons/icons.png" />
+	<img src="icons.png" />
+
+	<div style="background: url(icons.png); height: 180px; width: 200px; background-position: 100px 0; border: solid 1px #ccc;"  />
 </body>
 </html>
