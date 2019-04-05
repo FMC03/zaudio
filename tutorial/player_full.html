@@ -3,6 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+
+
+	<script>
+		
+		var trackList = [
+
+			{
+				'title' : 'SONG ONE',
+				'img' : 'IMG',
+				'filepath' : '../../1.mp3'
+			},
+
+			{
+				'title' : 'SONG TWO',
+				'img' : 'IMG',
+				'filepath' : '../../2.mp3'
+			},
+
+			{
+				'title' : 'SONG THREE',
+				'img' : 'IMG',
+				'filepath' : '../../3.mp3'
+			},
+
+		]
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script>
 		
@@ -10,32 +48,44 @@
 		// https://www.w3schools.com/tags/ref_av_dom.asp
 
 
+		// GLOBAL VARIABLES
+		var current_index = 0;
 
-		function changeSong(filename){
+
+
+
+		function changeSong(index){
+
+			var song = trackList[index];
+
+			current_index = index;
+
+			
+			// RESET HIGHLIGHTS, AND HIGHLIGHT NEW SONG
+			$('.trackList li').removeClass('active');
+			$('#song_' + index).addClass('active');
+
+
+
 			var src_element = document.getElementById("source_ctrl")
-			src_element.src = filename;
+			src_element.src = song.filepath;
 
 
 			var audio_player = document.getElementById("audio_player");
 			audio_player.load(); 
+			audio_player.play(); 
 
-			window.location.hash = filename;
+			console.log(audio_player.duration)
+
+
+			window.location.hash = index;
 
 
 			// DISPLAY INFORMATION ABOUT THE NEW TRACK
-			$('#display_song_name').html(filename);
+			$('#display_song_name').html(song.title);
 
 
-			// HANDLE "EVENTS"
-			audio_player.onended = function() {
-				console.log('song ended')
-			};
-
-			audio_player.ontimeupdate = function(){
-				//$('#display_current_place').html(audio_player.currentTime * (100 / audio_player.duration));
-				// var currentTime = audio_player.currentTime * (100 / audio_player.duration)
-				$('#display_current_place').html(sToTime(audio_player.currentTime)+"/"+sToTime(audio_player.duration));
-			}
+			
 		}
 
 		function playAudio(){
@@ -47,6 +97,21 @@
 			var audio_player = document.getElementById("audio_player");
 			audio_player.pause();
 		}
+
+		function nextAudio(){
+			current_index++;
+			if(current_index >= trackList.length) current_index = 0;
+
+			changeSong(current_index);
+		}
+
+		function prevAudio(){
+			current_index--;
+			if(current_index < 0) current_index = trackList.length - 1;
+
+			changeSong(current_index);
+		}
+
 
 		function sToTime(t) {
 			var s =	padZero(parseInt((t / (60 * 60)) % 24)) + ":" +
@@ -73,7 +138,6 @@
 			}
 
 			return formattedTime;
-
 		}
 
 
@@ -85,23 +149,62 @@
 		$(function(){
 
 			var hash = window.location.hash.substr(1);
-			console.log(hash);
 			if(hash != '') changeSong(hash);
 
 
 			var audio_player = document.getElementById("audio_player");
 
+
+
+
+			var tracklist_html = '';
+
+			trackList.forEach(function(song, index){
+				tracklist_html += '<li onclick="changeSong(' + index + ')" id="song_' + index + '">' + song.title + '</li>';
+			})
+			$('.trackList ul').html(tracklist_html);
+
+
+			// HANDLE "EVENTS"
+
 			audio_player.onplay = function() {
 				console.log('song playing')
     			$('#play_button').hide();
     			$('#pause_button').show();
-			};
+			}
 
 			audio_player.onpause = function() {
 				console.log('song paused')
     			$('#pause_button').hide();
     			$('#play_button').show();
-			};			
+			}	
+
+			audio_player.onended = function() {
+				nextAudio();
+			}
+
+			audio_player.ontimeupdate = function(){
+				
+
+
+				// GET DISPLAY TIME
+				var currentTime = sToTime(audio_player.currentTime);
+				var duration = sToTime(audio_player.duration);
+				$('#display_current_place').html(currentTime + "/" + duration);
+
+
+				// UPDATE MARKER
+				var ratio = audio_player.currentTime / audio_player.duration;
+
+				var pixels = (230 - 6) * ratio;
+
+				$('.track_place').css('margin-left', pixels);
+
+
+			}	
+
+
+
 		})
 
 	</script>
@@ -174,6 +277,7 @@
 			width: 6px;
 			border-radius: 3px;
 			background: red;
+			margin-left: 100px;
 		}
 
 		.todo {
@@ -191,7 +295,6 @@
 			padding: 0 30px;
 			margin: 0;
 		}
-
 	</style>
 
 </head>
@@ -201,29 +304,38 @@
 	
 	<div class="player">
 
-		<ul>
-			<li onclick="changeSong('../../1.mp3')" class="active">SONG ONE</li>
+		<div class="trackList">
+			<ul>
+				
+			</ul>
+		</div>
 
-			<li onclick="changeSong('../../2.mp3')">SONG TWO</li>
+		<div class="buttons">
 
-			<li onclick="changeSong('../../3.mp3')">SONG THREE</li>
-		</ul>
+			<div class="button" onclick="playAudio()" id="play_button">PLAY!</div>
 
-		<div class="button" onclick="playAudio()" id="play_button">PLAY!</div>
+			<div class="button" onclick="pauseAudio()" id="pause_button"style="display: none">PAUSE!</div>
 
-		<div class="button" onclick="pauseAudio()" id="pause_button"style="display: none">PAUSE!</div>
+			<div class="button" onclick="prevAudio()" id="prev_button">PREV!</div>
 
-		<div class="button" onclick="prevAudio()" id="prev_button">PREV!</div>
+			<div class="button" onclick="nextAudio()" id="next_button">NEXT!</div>	
 
-		<div class="button" onclick="nextAudio()" id="next_button">NEXT!</div>		
+			<div style="clear: both; height: 20px"></div>	
+		</div>
 
-		<div style="clear: both; height: 20px"></div>
+		
 
-		<audio controls id="audio_player">
+
+
+
+		<audio controls id="audio_player" style="display: none">
 
 	  		<source id="source_ctrl" src="../../1.mp3" type="audio/mpeg">
 		
 		</audio>
+
+
+
 
 
 		<div id="audio_player_status">
