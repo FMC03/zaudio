@@ -49,14 +49,38 @@
 		}
 
 		function sToTime(t) {
-			return padZero(parseInt((t / (60 * 60)) % 24)) + ":" +
-				padZero(parseInt((t / (60)) % 60)) + ":" + 
-				padZero(parseInt((t) % 60));
+			var s =	padZero(parseInt((t / (60 * 60)) % 24)) + ":" +
+					padZero(parseInt((t / (60)) % 60)) + ":" + 
+					padZero(parseInt((t) % 60));
+
+			var formattedTime = '';
+			var copy = false;
+			for(var i = 0; i < s.length; i++){
+				var char = s.charAt(i);
+				if(copy) formattedTime += char;
+
+				else {
+					if(char != '0' && char != ':') {
+						copy = true;
+						formattedTime += char;					
+					}
+
+					else if(i == 4) {
+						copy = true;
+						formattedTime += char;					
+					}
+				}
+			}
+
+			return formattedTime;
+
 		}
+
 
 		function padZero(v) {
 			return (v < 10) ? "0" + v : v;
 		}
+
 
 		$(function(){
 
