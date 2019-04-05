@@ -16,9 +16,11 @@
 		"></div>
 	</div>
 
-	<div style="margin: 100px; background: url(icons.png) no-repeat; height: 170px; width: 180px; border: solid 1px #ccc;
+	<div style="margin: 100px; background: url(icons.png) no-repeat; border: solid 1px #ccc;
 
 		background-size: 310px 175px;
+
+		height: 170px; width: 180px; 
 
 /*		background-position: -180px -170px; 
 */	"  />
