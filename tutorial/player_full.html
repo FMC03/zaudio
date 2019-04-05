@@ -28,15 +28,14 @@
 
 			// HANDLE "EVENTS"
 			audio_player.onended = function() {
-			    alert("The audio has ended");
+				console.log('song ended')
 			};
 
 			audio_player.ontimeupdate = function(){
-				console.log(audio_player.currentTime)
-				$('#display_current_place').html(audio_player.currentTime);	
+				//$('#display_current_place').html(audio_player.currentTime * (100 / audio_player.duration));
+				// var currentTime = audio_player.currentTime * (100 / audio_player.duration)
+				$('#display_current_place').html(sToTime(audio_player.currentTime)+"/"+sToTime(audio_player.duration));
 			}
-
-
 		}
 
 		function playAudio(){
@@ -49,6 +48,16 @@
 			audio_player.pause();
 		}
 
+		function sToTime(t) {
+			return padZero(parseInt((t / (60 * 60)) % 24)) + ":" +
+				padZero(parseInt((t / (60)) % 60)) + ":" + 
+				padZero(parseInt((t) % 60));
+		}
+
+		function padZero(v) {
+			return (v < 10) ? "0" + v : v;
+		}
+
 		$(function(){
 
 			var hash = window.location.hash.substr(1);
@@ -59,13 +68,13 @@
 			var audio_player = document.getElementById("audio_player");
 
 			audio_player.onplay = function() {
-				alert('i am playing!')
+				console.log('song playing')
     			$('#play_button').hide();
     			$('#pause_button').show();
 			};
 
 			audio_player.onpause = function() {
-				alert('i have paused!')
+				console.log('song paused')
     			$('#pause_button').hide();
     			$('#play_button').show();
 			};			
