@@ -61,5 +61,47 @@ head>
 	background-position: -400px top;
 	/*
 */	"  />
+
+<div style="height: 100px;"></div>
+
+	<div style="margin: 100px; background: url(icons1.png) no-repeat; height: 140px; width: 190px; border: solid 1px #ccc; position: relative; 
+
+		
+
+	background-position: left top;  background-size: 510px;
+	/*
+*/	"  />
+
+	<div style="margin: 150px; background: url(icons1.png) no-repeat; height: 140px; width: 190px; border: solid 1px #ccc; position: relative; 
+
+		
+
+	background-position: -189px top;  background-size: 510px;
+	/*
+*/	"  />
+
+	<div style="margin: 150px; background: url(icons1.png) no-repeat; height: 140px; width: 170px; border: solid 1px #ccc; position: relative; 
+
+		
+
+	background-position: left bottom;  background-size: 510px;
+	/*
+*/	"  />
+
+	<div style="margin: 150px; background: url(icons1.png) no-repeat; height: 140px; width: 170px; border: solid 1px #ccc; position: relative; 
+
+		
+
+	background-position: bottom;  background-size: 510px;
+	/*
+*/	"  />
+
+	<div style="margin: 150px; background: url(icons1.png) no-repeat; height: 140px; width: 170px; border: solid 1px #ccc; position: relative; 
+
+		
+
+	background-position: -340px bottom;  background-size: 510px;
+	/*
+*/	"  />
 </body>
 </html>
