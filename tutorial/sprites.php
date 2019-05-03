@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+<style type="text/css">
+	{}
+</style>
 <html>
 head>
 	<title>LMAO</title>
 </head>
 <body>
 
-	<div style="position: relative; width: 619px; height: 330px">
+	<div id="1" style="position: relative; width: 619px; height: 330px">
 
 		<img src="icons.png" style="position: absolute; z-index: 1" />
 		
@@ -105,3 +108,6 @@ head>
 */	"  />
 </body>
 </html>
+<script type="text/javascript">
+	$('icons1.png').click(function())
+</script>

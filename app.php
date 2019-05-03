@@ -5,7 +5,7 @@
 	<title>Basic JS Architecture</title>
 
 			<link href="./client/css/html.css" type="text/css" rel="stylesheet">
-			<link href="./music.css" type="text/css" rel="stylesheet">
+			<link href="./html.css" type="text/css" rel="stylesheet">
 
 
 
@@ -128,10 +128,18 @@
 	</script>
 
 </head>
+<?php
+	// require("server/database.php");
+	require('_includes/header.php');
+	?>
 <body>
 	<div class="Client_Page_Container">
 		<div class="Client_Home_Container">
-			<div id="html_frame"></div>
+			<div class="Home-Recommended-Songs-Container">
+				<div class="Recommended-Songs-Container">
+					<div id="html_frame"></div>
+				</div>
+			</div>
 		</div>
 	</div>
 	
