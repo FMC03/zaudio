@@ -57,19 +57,19 @@
 
 
 		// start our empty html string
-		/*<div class="Recommended_Song">
-							<div style="background-image: url(client/images/gc.jpg);"  class="Song_IMG"></div>
-							<div class="Song_Information">								
-								<b class="Song_Name">Gucci Gang</b>
-								<b class="Song_Artist">Lil Pump</b>
-								<div class="Song_Data">
+		/*<div class="Recommended-Song">
+							<div style="background-image: url(client/images/gc.jpg);"  class="Song-IMG"></div>
+							<div class="Song-Information">								
+								<b class="Song-Name">Gucci Gang</b>
+								<b class="Song-Artist">Lil Pump</b>
+								<div class="Song-Data">
 									<div class="Liked">
 										<img src="client/images/icons/liked.png" />
-										<b class="Song_Liked_Amount">5</b>
+										<b class="Song-Liked-Amount">5</b>
 									</div>
 									<div class="Replay">
 										<img src="client/images/icons/replays.png" />
-										<b class="Song_Replay_Amount">5k+</b>
+										<b class="Song-Replay-Amount">5k+</b>
 									</div>
 								</div>
 							</div>
@@ -83,21 +83,22 @@
 
 			var song = songs[i];
 			
-			html 	+= 	'<div class="Recommended_Song">' + 	
-							'<div style="background-image: url('+ song.img +');"  class="Song_IMG"></div>' +
-							'<div class="Song_Information">'+
-								'<b class="Song_Name">' + song.song	 + '</b>' +
-								'<b class="Song_Artist">' + song.artist	 + '</b>' +
-								'<div class="Song_Data">' + 
+			html 	+= 	'<div class="Recommended-Song">' + 	
+							'<div style="background-image: url('+ song.img +');"  class="Song-IMG"></div>' +
+							'<div class="Song-Information">'+
+								'<b class="Song-Name">' + song.song	 + '</b>' +
+								'<b class="Song-Artist">' + song.artist	 + '</b>' +
+								'<div class="Song-Data">' + 
 									'<div class="Liked">' +
 										'<img src="client/images/icons/liked.png" />' +
-										'<b class="Song_Replay_Amount">' + song.likes + '</b>' +
+										'<b class="Song-Replay-Amount">' + song.likes + '</b>' +
 									'</div>' +
 									'<div class="Replay">' +
 										'<img src="client/images/icons/replays.png" />' +
-										'<b class="Song_Replay_Amount">' + song.replays + '</b>' +
+										'<b class="Song-Replay-Amount">' + song.replays + '</b>' +
 									'</div>'+
 								'</div>' +
+							'</div>' +
 						'</div>';
 
 		}
@@ -112,7 +113,7 @@
 		$(function(){
 					
 			// AND THEN RUN THIS...
-			var element = $('#html_frame');
+			var element = $('#html-frame');
 
 			element.html(html);
 
@@ -133,11 +134,11 @@
 	require('_includes/header.php');
 	?>
 <body>
-	<div class="Client_Page_Container">
-		<div class="Client_Home_Container">
+	<div class="Client-Page-Container">
+		<div class="Client-Home-Container">
 			<div class="Home-Recommended-Songs-Container">
-				<div class="Recommended-Songs-Container">
-					<div id="html_frame"></div>
+				<div class="Recommended-Songs-Container" id="html-frame">
+					
 				</div>
 			</div>
 		</div>
