@@ -165,6 +165,27 @@
 			$('.trackList ul').html(tracklist_html);
 
 
+			// HANDLE DRAGGER 
+			$('.track_place')
+				.on('dragstart', function(event){
+					$('.track_place').addClass('big_marker');
+					console.log('drag has started');
+					console.log(event);
+				})
+				$('.track_place').on('drag', function(event){
+					console.log('dragging');
+					console.log(event)
+				})
+				.on('dragend', function(event){
+					console.log('drag ended');
+					console.log(event)
+				})
+
+
+
+
+
+
 			// HANDLE "EVENTS"
 
 			audio_player.onplay = function() {
@@ -198,11 +219,9 @@
 
 				var pixels = (230 - 6) * ratio;
 
-				$('.track_place').css('margin-left', pixels);
+				//$('.track_place').css('margin-left', pixels);
 
-
-			}	
-
+			}
 
 
 		})
@@ -240,7 +259,14 @@
 			margin: 10px 0;
 			padding: 10px;
 			background: white;
+			cursor: pointer;
 		}
+
+		.player li:hover {
+			background: #ccc;
+		}
+
+
 
 		.player li.active {
 			background: green;
@@ -280,6 +306,14 @@
 			margin-left: 100px;
 		}
 
+		.track_place.big_marker {
+			height: 12px;
+			width: 12px;
+			border-radius: 6px;
+			background: red;
+			margin-left: 100px;
+		}
+
 		.todo {
 			float: left;
 		}
@@ -300,6 +334,10 @@
 </head>
 <body>
 
+
+	<div style="height: 100px; width: 100px; background: red"  draggable="true"></div>	
+
+<!-- 
 	<h2>Zaudio JS Audio Player:</h2>
 	
 	<div class="player">
@@ -357,13 +395,15 @@
 
 			<b>Current Place:</b>
 			<div class="track_line">
-				<div class="track_place"></div>
+				<div class="track_place" draggable="true"></div>
 			</div>
 
 
 		</div>
 
-	</div>	
+	</div>
+
+	<div style="clear: both"></div>
 
 	<div class="todo">
 		
@@ -382,6 +422,7 @@
 
 		</ol>
 	</div>	
+ -->
 
 </body>
 </html>
