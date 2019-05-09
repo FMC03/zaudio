@@ -329,6 +329,61 @@
 			padding: 0 30px;
 			margin: 0;
 		}
+
+		/*inputs */
+		.input {
+			outline: none;
+		}
+
+		.input #seekslider{
+			width: 90px;
+		}
+
+		.input #volslider{
+			width: 80px;
+		}
+
+		input[type='range'] {
+    -webkit-appearance: none !important;
+	margin:0px;
+	padding:0px;
+    background: #333;
+    height:3px;
+	border-bottom:#333 1px solid;
+}
+input[type='range']::-ms-fill-lower  {
+	background:#333;
+}
+input[type='range']::-ms-fill-upper  {
+	background:#333;
+}
+input[type='range']::-moz-range-track {
+	border:none;
+    background: #333;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background: radial-gradient(#FFF, #333);
+    height:11px;
+    width:11px;
+	border-radius:100%;
+	cursor:pointer;
+}
+input[type='range']::-moz-range-thumb {
+    background: radial-gradient(#FFF, #333);
+    height:11px;
+    width:11px;
+	border-radius:100%;
+	cursor:pointer;
+}
+input[type='range']::-ms-thumb {
+    -webkit-appearance: none !important;
+    background: radial-gradient(#FFF, #333);
+    height:11px;
+    width:11px;
+	border-radius:100%;
+	cursor:pointer;
+}
 	</style>
 
 </head>
@@ -396,8 +451,9 @@
 			<div class="track_line">
 				<div class="track_place" draggable="true"></div>
 			</div>
-
-
+			<input id="seekslider" type="range" min="0" max="100" value="0" step="1">
+			<input id="volslider" type="range" min="0" max="100" value="100" step="1">	
+			</div>
 		</div>
 
 	</div>
