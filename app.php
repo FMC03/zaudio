@@ -5,7 +5,7 @@
 	<title>Basic JS Architecture</title>
 
 			<link href="./client/css/html.css" type="text/css" rel="stylesheet">
-			<link href="./html.css" type="text/css" rel="stylesheet">
+			<link href="./music.css" type="text/css" rel="stylesheet">
 
 
 
@@ -27,49 +27,49 @@
 														
 							// songs[0]
 							{
-								song: "Gucci Gang",
-								artist : "Lil Pump",
+								song: "Church Oragan",
+								artist : "Baxer Academy Music Cluster",
 								img: 'client/images/gc.jpg',
-								likes: "5",
-								replays: "5k+"
+								likes: "0",
+								replays: "0"
 							},
 
 							
 							// songs[1]
 							{
-								song: "Feels Like Summer",
-								artist: "Childish Gambino",
+								song: "Jazzy 01",
+								artist: "Baxter Academy Music Cluster",
 								img: 'client/images/fls.png',
-								likes: "1.3k+",
-								replays: "5k+"
+								likes: "0",
+								replays: "0"
 							},
 
 							// songs[2]
 							{
-								song: "XO Tour Lif3",
-								artist: "Lil Uzi Vert",
+								song: "Emily Blenk",
+								artist: "Baxter Academy Music Cluster",
 								img : 'client/images/xotl.jpg',
-								likes: "2k+",
-								replays: "5k+",
+								likes: "0",
+								replays: "0",
 							}
 						];
 
 
 
 		// start our empty html string
-		/*<div class="Recommended-Song">
-							<div style="background-image: url(client/images/gc.jpg);"  class="Song-IMG"></div>
-							<div class="Song-Information">								
-								<b class="Song-Name">Gucci Gang</b>
-								<b class="Song-Artist">Lil Pump</b>
-								<div class="Song-Data">
+		/*<div class="Recommended_Song">
+							<div style="background-image: url(client/images/gc.jpg);"  class="Song_IMG"></div>
+							<div class="Song_Information">								
+								<b class="Song_Name">Gucci Gang</b>
+								<b class="Song_Artist">Lil Pump</b>
+								<div class="Song_Data">
 									<div class="Liked">
 										<img src="client/images/icons/liked.png" />
-										<b class="Song-Liked-Amount">5</b>
+										<b class="Song_Liked_Amount">5</b>
 									</div>
 									<div class="Replay">
 										<img src="client/images/icons/replays.png" />
-										<b class="Song-Replay-Amount">5k+</b>
+										<b class="Song_Replay_Amount">5k+</b>
 									</div>
 								</div>
 							</div>
@@ -83,22 +83,21 @@
 
 			var song = songs[i];
 			
-			html 	+= 	'<div class="Recommended-Song">' + 	
-							'<div style="background-image: url('+ song.img +');"  class="Song-IMG"></div>' +
-							'<div class="Song-Information">'+
-								'<b class="Song-Name">' + song.song	 + '</b>' +
-								'<b class="Song-Artist">' + song.artist	 + '</b>' +
-								'<div class="Song-Data">' + 
+			html 	+= 	'<div class="Recommended_Song">' + 	
+							'<div style="background-image: url('+ song.img +');"  class="Song_IMG"></div>' +
+							'<div class="Song_Information">'+
+								'<b class="Song_Name">' + song.song	 + '</b>' +
+								'<b class="Song_Artist">' + song.artist	 + '</b>' +
+								'<div class="Song_Data">' + 
 									'<div class="Liked">' +
 										'<img src="client/images/icons/liked.png" />' +
-										'<b class="Song-Replay-Amount">' + song.likes + '</b>' +
+										'<b class="Song_Replay_Amount">' + song.likes + '</b>' +
 									'</div>' +
 									'<div class="Replay">' +
 										'<img src="client/images/icons/replays.png" />' +
-										'<b class="Song-Replay-Amount">' + song.replays + '</b>' +
+										'<b class="Song_Replay_Amount">' + song.replays + '</b>' +
 									'</div>'+
 								'</div>' +
-							'</div>' +
 						'</div>';
 
 		}
@@ -113,7 +112,7 @@
 		$(function(){
 					
 			// AND THEN RUN THIS...
-			var element = $('#html-frame');
+			var element = $('#html_frame');
 
 			element.html(html);
 
@@ -129,18 +128,10 @@
 	</script>
 
 </head>
-<?php
-	// require("server/database.php");
-	require('_includes/header.php');
-	?>
 <body>
-	<div class="Client-Page-Container">
-		<div class="Client-Home-Container">
-			<div class="Home-Recommended-Songs-Container">
-				<div class="Recommended-Songs-Container" id="html-frame">
-					
-				</div>
-			</div>
+	<div class="Client_Page_Container">
+		<div class="Client_Home_Container">
+			<div id="html_frame"></div>
 		</div>
 	</div>
 	
