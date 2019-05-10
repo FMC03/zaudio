@@ -7,6 +7,11 @@
 <div>Icons made by <a href="https://www.flaticon.com/authors/daniele-de-santis" title="Daniele De Santis">Daniele De Santis</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 -->
 <!--tutorial for seek slider: https://www.developphp.com/video/JavaScript/Audio-Seek-and-Volume-Range-Slider-Tutorial -->
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
 <style>
 	body {
 		width: 100%;
@@ -98,10 +103,22 @@
 </style>
 <script>
 	var audio, playbtn, mutebtn, seekslider, volumeslider, seeking=false, seekto;
+
+
+
 	function startAudioPlayer() {
+
+		// invisible audio icon
 		audio = new Audio();
-		audio.src = "audio/jazzy.mp3";
-		
+		audio.src = "../../../1.mp3";
+
+
+		audio.ontimeupdate = markerUpdate;
+
+
+
+		 $('#seekslider').change(handleMarkerUpdate); 
+
 		// set object refrences
 		
 
@@ -122,10 +139,10 @@
 	function playPause() {
 		if(audio.paused) {
 			audio.play();
-			document.getElementById("playpausebtn").style.backgroundImage = "url ('icons/pause.png') no repeat"
+			$("#playpausebtn").css({ "background-image": "url(icons/pause.png)" });
 		} else {
 			audio.pause();
-			document.getElementById("playpausebtn").style.backgroundImage = "url ('icons/play-button.png') no repeat"
+			$("#playpausebtn").css({ "background-image": "url(icons/play-button.png)" });
 		}
 	}
 	//toggle mute
@@ -149,7 +166,61 @@
 		audio.volume = volslider.value / 100;
 	}
 
-	window.onload = startAudioPlayer();
+	markerUpdate = function(){
+				
+		// GET DISPLAY TIME
+		var currentTime = sToTime(audio.currentTime);
+		var duration = sToTime(audio.duration);
+		$('#display_current_place').html(currentTime + "/" + duration);
+
+
+		// UPDATE MARKER
+		var ratio = 100 * audio.currentTime / audio.duration;
+		$('#seekslider')[0].value = ratio;
+
+	}
+
+	handleMarkerUpdate = function(){
+		var place = $('#seekslider')[0].value;
+
+		var time = place / 100 * audio.duration;
+
+		audio.currentTime = time;
+	}
+
+	function sToTime(t) {
+		var s =	padZero(parseInt((t / (60 * 60)) % 24)) + ":" +
+				padZero(parseInt((t / (60)) % 60)) + ":" + 
+				padZero(parseInt((t) % 60));
+
+		var formattedTime = '';
+		var copy = false;
+		for(var i = 0; i < s.length; i++){
+			var char = s.charAt(i);
+			if(copy) formattedTime += char;
+
+			else {
+				if(char != '0' && char != ':') {
+					copy = true;
+					formattedTime += char;					
+				}
+
+				else if(i == 4) {
+					copy = true;
+					formattedTime += char;					
+				}
+			}
+		}
+
+		return formattedTime;
+	}
+
+
+	function padZero(v) {
+		return (v < 10) ? "0" + v : v;
+	}
+
+	$(startAudioPlayer);
 
 </script>
 
@@ -158,6 +229,11 @@
 <body>
 	<div>
 		<button onclick="playPause()" id="playpausebtn"></button>
+
+
+		<div id="display_current_place"></div>
+
+
 		<div>
 			<input id="seekslider" onmouseup="function(){ seeking=false; }" onmousedown="function(event){ seeking=true; seek(event); }" onmousemove="function(event){ seek(event); }" type="range" min="0" max="100" value="0" step="1">
 
@@ -182,14 +258,10 @@
 		<br /><br />
 
 		<ol>
-			<li>Make song buttons work.</li>
-			<li>Make play / pause buttons work.</li>
-			<li>Make next button work.</li>
-			<li>Make prev button work.</li>
-			<li>When song changes, update song title.</li>
-			<li>When song changes, update song img.</li>
-			<li>As track plays, update song track time display.</li>
-			<li>As track plays, update song track marker.</li>
+			<li>Toggle play / pause icon.</li>
+			<li>Add track place / total length.</li>
+			<li>Update slider position when song plays.</li>
+
 
 		</ol>
 		<div>Icons made by <a href="https://www.flaticon.com/authors/daniele-de-santis" title="Daniele De Santis">Daniele De Santis</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
