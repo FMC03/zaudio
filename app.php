@@ -27,33 +27,33 @@
 														
 							// songs[0]
 							{
-								song: "Gucci Gang",
-								artist : "Lil Pump",
+								song: "Church Oragon",
+								artist : "Baxter Media",
 								img: 'client/images/gc.jpg',
-								likes: "5",
-								replays: "5k+",
-								audio: ''
+								likes: "0",
+								replays: "0",
+								audio: 'churchoragon.mp3'
 							},
 
 							
 							// songs[1]
 							{
-								song: "Feels Like Summer",
-								artist: "Childish Gambino",
+								song: "Emilyblenk",
+								artist: "Baxter Media",
 								img: 'client/images/fls.png',
-								likes: "1.3k+",
-								replays: "5k+",
-								audio: ''
+								likes: "0",
+								replays: "0",
+								audio: 'emilyblenk.mp3'
 							},
 
 							// songs[2]
 							{
-								song: "XO Tour Lif3",
-								artist: "Lil Uzi Vert",
+								song: "Mobile Games",
+								artist: "Baxter Media",
 								img : 'client/images/xotl.jpg',
-								likes: "2k+",
-								replays: "5k+",
-								audio: ''
+								likes: "0",
+								replays: "0",
+								audio: 'Mobile Games.mp3'
 							}
 						];
 
@@ -80,8 +80,7 @@
 
 		var html = '';
 
-
-
+		
 		for(var i = 0; i < songs.length; i++){
 
 			var song = songs[i];
@@ -106,10 +105,14 @@
 
 		}
 
-
-		function playSong(index){
-			var song = songs[index];
-			console.log(song)
+		//audio player
+		audio = new Audio();
+		//playing song when clicked
+		function playSong(i){
+			var song = songs[i];
+			audio.src = song.audio;
+			console.log(song.audio);
+			audio.play();
 		}
 		
 
