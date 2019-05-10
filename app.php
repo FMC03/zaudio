@@ -14,76 +14,31 @@
 <script>
 
 
-		var numbers = {
-			key1 : 'value 1',
-			key2 : 'value 2'
-		}
+	// DEFINE OUR APP STATE
 
+	// tracklist
+	tracklist = <?php include('client/tracklist.json'); ?>;
 
-		// DEFINE OUR DATA OBJECT
-		// JAVASCRIPT OBJECT NOTATION (JSON)
+	// now playing 
+	now_playing = {
+		index : 0,
+		song: tracklist[0]
+	}
 
-		var songs = 	[
-														
-							// songs[0]
-							{
-								song: "Church Oragon",
-								artist : "Baxter Media",
-								img: 'client/images/gc.jpg',
-								likes: "0",
-								replays: "0",
-								audio: 'churchoragon.mp3'
-							},
-
-							
-							// songs[1]
-							{
-								song: "Emilyblenk",
-								artist: "Baxter Media",
-								img: 'client/images/fls.png',
-								likes: "0",
-								replays: "0",
-								audio: 'emilyblenk.mp3'
-							},
-
-							// songs[2]
-							{
-								song: "Mobile Games",
-								artist: "Baxter Media",
-								img : 'client/images/xotl.jpg',
-								likes: "0",
-								replays: "0",
-								audio: 'Mobile Games.mp3'
-							}
-						];
+	//audio player
+	audio = new Audio();
 
 
 
-		// start our empty html string
-		/*<div class="Recommended-Song">
-							<div style="background-image: url(client/images/gc.jpg);"  class="Song-IMG"></div>
-							<div class="Song-Information">								
-								<b class="Song-Name">Gucci Gang</b>
-								<b class="Song-Artist">Lil Pump</b>
-								<div class="Song-Data">
-									<div class="Liked">
-										<img src="client/images/icons/liked.png" />
-										<b class="Song-Liked-Amount">5</b>
-									</div>
-									<div class="Replay">
-										<img src="client/images/icons/replays.png" />
-										<b class="Song-Replay-Amount">5k+</b>
-									</div>
-								</div>
-							</div>
-						</div> */
+	// initialize app
+	$(function(){
 
 		var html = '';
 
 		
-		for(var i = 0; i < songs.length; i++){
+		for(var i = 0; i < tracklist.length; i++){
 
-			var song = songs[i];
+			var song = tracklist[i];
 			
 			html 	+= 	'<div class="Recommended-Song" onclick="playSong(' + i + ')">' + 	
 							'<div style="background-image: url('+ song.img +');"  class="Song-IMG"></div>' +
@@ -105,31 +60,92 @@
 
 		}
 
-		//audio player
-		audio = new Audio();
-		//playing song when clicked
-		function playSong(i){
-			var song = songs[i];
-			audio.src = song.audio;
-			console.log(song.audio);
-			audio.play();
-		}
-		
+		// AND THEN RUN THIS...
+		$('#html-frame').html(html);
 
+	});
+
+
+	// APP ACTIONS
+
+	function playSong(i){
+		var song = tracklist[i];
+		audio.src = song.audio;
+		console.log(song.audio);
+		audio.play();
+
+		// update app state
+		now_playing = {
+			"index" : i,
+			"song" : song
+		};
+	}
+
+
+
+	// HANDLE EVENTS
+
+	audio.ontimeupdate = function(){
+
+		console.log('are we running?')
+
+		// GET DISPLAY TIME
+		var currentTime = sToTime(audio.currentTime);
+		var duration = sToTime(audio.duration);
+
+
+		// GET CURRENT SONG
+		var title = now_playing.song.song + ' - ' + now_playing.song.artist;
+
+		$('#display_current_place').html(title + '<br />' + currentTime + "/" + duration);
+
+
+		// UPDATE MARKER
+		// var ratio = 100 * audio.currentTime / audio.duration;
+		// $('#seekslider')[0].value = ratio;
+
+	}
+	
+
+
+	// UTILITY FUNCTIONS
+	function sToTime(t) {
+		var s =	padZero(parseInt((t / (60 * 60)) % 24)) + ":" +
+				padZero(parseInt((t / (60)) % 60)) + ":" + 
+				padZero(parseInt((t) % 60));
+
+		var formattedTime = '';
+		var copy = false;
+		for(var i = 0; i < s.length; i++){
+			var char = s.charAt(i);
+			if(copy) formattedTime += char;
+
+			else {
+				if(char != '0' && char != ':') {
+					copy = true;
+					formattedTime += char;					
+				}
+
+				else if(i == 4) {
+					copy = true;
+					formattedTime += char;					
+				}
+			}
+		}
+
+		return formattedTime;
+	}
+
+
+	function padZero(v) {
+		return (v < 10) ? "0" + v : v;
+	}
+
+
+		
 		
 
 	
-		// WAIT UNTIL THE PAGE HAS LOADED
-		$(function(){
-					
-			// AND THEN RUN THIS...
-			var element = $('#html-frame');
-
-			element.html(html);
-
-			element.css('color', 'red');
-
-		});
 
 
 	</script>
@@ -151,7 +167,11 @@
 					</div>
 			</div>
 		</div>
+			<div id="display_current_place"></div>
+
 	</div>
+
+
 	<?php require('_includes/footer.php');?>
 </body>
 
