@@ -29,10 +29,10 @@
 							{
 								song: "Gucci Gang",
 								artist : "Lil Pump",
-								img: 'client/images/gc.jpg',.
+								img: 'client/images/gc.jpg',
 								likes: "5",
-								replays: "5k+"
-								audio: 
+								replays: "5k+",
+								audio: ''
 							},
 
 							
@@ -42,8 +42,8 @@
 								artist: "Childish Gambino",
 								img: 'client/images/fls.png',
 								likes: "1.3k+",
-								replays: "5k+"
-								audio:
+								replays: "5k+",
+								audio: ''
 							},
 
 							// songs[2]
@@ -53,7 +53,7 @@
 								img : 'client/images/xotl.jpg',
 								likes: "2k+",
 								replays: "5k+",
-								audio:
+								audio: ''
 							}
 						];
 
@@ -86,7 +86,7 @@
 
 			var song = songs[i];
 			
-			html 	+= 	'<div class="Recommended-Song">' + 	
+			html 	+= 	'<div class="Recommended-Song" onclick="playSong(' + i + ')">' + 	
 							'<div style="background-image: url('+ song.img +');"  class="Song-IMG"></div>' +
 							'<div class="Song-Information">'+
 								'<b class="Song-Name">' + song.song	 + '</b>' +
@@ -107,6 +107,10 @@
 		}
 
 
+		function playSong(index){
+			var song = songs[index];
+			console.log(song)
+		}
 		
 
 		
@@ -121,10 +125,6 @@
 			element.html(html);
 
 			element.css('color', 'red');
-
-			element.click(function(){
-				alert('click!!!')
-			})
 
 		});
 

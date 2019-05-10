@@ -202,6 +202,11 @@ div.Recommended-Songs-Container div.Recommended-Song {
     margin-bottom: 10px;
 }
 
+.Recommended-Song:hover {
+    cursor: pointer;
+    background: #eee;
+}
+
 div.Recommended-Songs-Container div.Song-Information{
     padding-left: 10px;
     padding-top: 4px;
