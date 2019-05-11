@@ -7,24 +7,16 @@
 			<b class="Song-Artist">Travis Scott</b>
 		</div>
 		<div class="Song-Options">
-			<a href="index.php" class="Song-Option Back">
-				<i class="fas fa-angle-double-left"></i>
-			</a>
-			<a href="index.php" class="Song-Option Action">
-				<i class="fas fa-pause-circle"></i>
-			</a>
-			<a href="index.php" class="Song-Option Skip">
-				<i class="fas fa-angle-double-right"></i>
-			</a>
+			<button onclick="songNext()" id="arrow skip">
+			<button onclick="playPause()" id="playpausebtn" >
+			<button onclick="songLast()" id="arrow last">
 		</div>
 	</div>
 </div>
-<audio controls id="audio_player">
-  		<source id="source_ctrl" src="client/songs/Travis Scott - SICKO MODE ft. Drake.mp3" type="audio/mpeg">
-</audio>
+
 <footer class="Client-Footer-Container">
 	<div class="Footer-Options-Container">
-		<a href="index.php" class="Footer-Option Home">
+		<a href="app.php" class="Footer-Option Home">
 			<i class="fas fa-home"></i>
 		</a>
 		<a href="search.php" class="Footer-Option Search">

@@ -15,7 +15,7 @@
 
 
 	// DEFINE OUR APP STATE
-	var audio, playbtn, mutebtn, seekslider, volumeslider, seeking=false, seekto;
+
 	// tracklist
 	tracklist = <?php include('client/tracklist.json'); ?>;
 
@@ -79,7 +79,6 @@
 			"index" : i,
 			"song" : song
 		};
-		console.log(now_playing)
 	}
 
 	function playPause() {
