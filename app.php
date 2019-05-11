@@ -15,7 +15,7 @@
 
 
 	// DEFINE OUR APP STATE
-
+	var audio, playbtn, mutebtn, seekslider, volumeslider, seeking=false, seekto;
 	// tracklist
 	tracklist = <?php include('client/tracklist.json'); ?>;
 
@@ -79,11 +79,21 @@
 			"index" : i,
 			"song" : song
 		};
+		console.log(now_playing)
 	}
 
-
+	function playPause() {
+		if(audio.paused) {
+			audio.play();
+			$("#playpausebtn").css({ "background-image": "url(icons/pause.png)" });
+		} else {
+			audio.pause();
+			$("#playpausebtn").css({ "background-image": "url(icons/play-button.png)" });
+		}
+	}
 
 	// HANDLE EVENTS
+
 
 	audio.ontimeupdate = function(){
 
