@@ -21,7 +21,7 @@
 </div>
 <footer class="Client_Footer_Container">
 	<div class="Footer_Options_Container">
-		<a href="index.php" class="Footer_Option Home">
+		<a href="app.php" class="Footer_Option Home">
 			<i class="fas fa-home"></i>
 		</a>
 		<a href="search.php" class="Footer_Option Search">
