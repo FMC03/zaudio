@@ -1,3 +1,35 @@
+<!-- 
+
+	TO DO:
+
+	X UPDATE "NOW PLAYING" CONTENT
+
+	X PROGRAM playNextSong()
+
+	X PROGRAM goBack() = 
+		- if within the two seconds, go to previous song.
+		- else back to start of song. 
+
+	X SEARCH FUNCTIONALITY
+
+	X SHUFFLE
+
+	X TOGGLE SEARCH BOX DISPLAY
+
+	- MOVE JS INTO ITS OWN FILE
+
+	- FIX UI, SO IT LOOKS THE WAY YOU WANT IT TO
+
+	- CLEAN UP FILES / FOLDERS AND CREATE NEW REPO
+
+
+
+
+
+
+ -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,28 +49,98 @@
 	// DEFINE OUR APP STATE
 
 	// tracklist
-	tracklist = <?php include('client/tracklist.json'); ?>;
+	tracklist_total = <?php include('client/tracklist.json'); ?>;
+
+	tracklist_current = {
+		search_term : '',
+		tracks : []
+	}
+
 
 	// now playing 
 	now_playing = {
 		index : 0,
-		song: tracklist[0]
+		song: null
 	}
 
 	//audio player
-	audio = new Audio();
-
+	audioPlayer = new Audio();
 
 
 	// initialize app
 	$(function(){
 
+		// load current track list
+		processSearch();
+
+
+		// ATTACH A FUNCTION ONTO THE SEARCH BOX'S keydown() event
+		$('#searchBox').keyup(processSearch);
+
+
+		$('#shuffleSongs').click(shuffleSongs);
+
+	});
+
+
+	// APP ACTIONS
+
+
+	// SHUFFLE SONGS
+	function shuffleSongs(){
+		shuffle(tracklist_current.tracks);
+		renderCurrentTrackList();
+	}
+
+	function shuffle(array) {
+		array.sort(() => Math.random() - 0.5);
+	}
+
+
+
+	// PROCESS SEARCH		
+	function processSearch(){
+
+		// update search string
+
+		var search_term = $('#searchBox').val();
+
+		tracklist_current.search_term = search_term;
+
+		// reset current tracklist
+		tracklist_current.tracks = [];
+
+		// go through total tracklist and add songs that meet criteria onto current tracklist
+		for(var i = 0; i < tracklist_total.length; i++){
+			var song = tracklist_total[i];
+
+			var includeTrack = false;
+
+			search_term = search_term.toUpperCase();
+
+			// run tests
+			if(song.artist.toUpperCase().indexOf(search_term) != -1) includeTrack = true;
+
+			if(song.song.toUpperCase().indexOf(search_term) != -1) includeTrack = true;
+
+
+			// if you're including the track, update global app state object "tracklist_current.tracks"
+			if(includeTrack) tracklist_current.tracks.push(song);
+		}
+
+
+		// re-render it
+		renderCurrentTrackList();
+
+	}
+
+	function renderCurrentTrackList(){
+
 		var html = '';
 
-		
-		for(var i = 0; i < tracklist.length; i++){
+		for(var i = 0; i < tracklist_current.tracks.length; i++){
 
-			var song = tracklist[i];
+			var song = tracklist_current.tracks[i];
 			
 			html 	+= 	'<div class="Recommended-Song" onclick="playSong(' + i + ')">' + 	
 							'<div style="background-image: url('+ song.img +');"  class="Song-IMG"></div>' +
@@ -60,53 +162,136 @@
 
 		}
 
+
 		// AND THEN RUN THIS...
 		$('#html-frame').html(html);
 
-	});
+	}
 
-
-	// APP ACTIONS
 
 	function playSong(i){
-		var song = tracklist[i];
-		audio.src = song.audio;
-		console.log(song.audio);
-		audio.play();
-
-		// update app state
+		
+		// UPDATE APP STATE: now_playing
+		var song = tracklist_current.tracks[i];
 		now_playing = {
 			"index" : i,
 			"song" : song
 		};
+
+
+		// PLAY SONG - UPDATE APP STATE: audioPlayer
+		audioPlayer.src = song.audio;
+		audioPlayer.play();
+		
+
+		// UPDATE UI HTML
+		var nowPlayingHTML = 
+
+			'<div style="background-image: url(' + song.img + ');"  class="Song-IMG"></div>' +
+
+			'<div class="Song-Information">' +
+				'<b class="Song-Playing">CURRENTLY PLAYING</b>' +
+				'<b class="Song-Name">' + song.song + '</b>' +
+				'<b class="Song-Artist">' + song.artist + '</b>' +
+				'<div id="display_current_place"></div>' +
+			'</div>' +
+			'<div class="Song-Options">' +
+				'<button onclick="goBack()" id="arrow skip">PREV</button>' +
+				'<button onclick="togglePlayState()" id="playpausebtn" >PLAY / PAUSE</button>' +
+				'<button onclick="playNextSong()" id="arrow last">NEXT</button>' +
+			'</div>';
+
+		$('.Currently-Playing-Container').html(nowPlayingHTML);
+
+
+
 	}
 
-	function playPause() {
-		if(audio.paused) {
-			audio.play();
+	function togglePlayState() {
+		if(audioPlayer.paused) {
+			audioPlayer.play();
 			$("#playpausebtn").css({ "background-image": "url(icons/pause.png)" });
 		} else {
-			audio.pause();
+			audioPlayer.pause();
 			$("#playpausebtn").css({ "background-image": "url(icons/play-button.png)" });
 		}
 	}
 
+
+	function playNextSong(){
+
+		// get current index from global app state object "now_playing" 
+		var currentIndex = now_playing.index;
+
+		// iterate current index
+		currentIndex++;
+
+		// check against "trackList" object in global app state
+		if(currentIndex == tracklist_current.tracks.length) currentIndex = 0;
+
+		playSong(currentIndex);
+
+	}
+
+
+	function goBack(){
+
+		// get current place from global app state object "audioPlayer"
+		var currentTime = audioPlayer.currentTime;
+
+		// get current index from global app state object "now_playing"
+		var currentIndex = now_playing.index;
+		
+
+		// if we're in the first two seconds AND it's not the first song
+		if(currentTime < 2 && currentIndex != 0){
+
+			// play the previous song
+			playSong(currentIndex - 1);
+			
+		}
+
+		else {
+			// go back to beginning
+			audioPlayer.currentTime = 0;
+		}
+
+	}
+
+	function toggleSearch(){
+
+		var is_search_displaying = $('#searchBox').css('display');
+
+		if(is_search_displaying == 'block')  $('#searchBox').css('display', 'none');
+
+		if(is_search_displaying == 'none')  $('#searchBox').css('display', 'block');
+	}
+
+
 	// HANDLE EVENTS
 
 
-	audio.ontimeupdate = function(){
-
-		console.log('are we running?')
+	audioPlayer.ontimeupdate = function(){
 
 		// GET DISPLAY TIME
-		var currentTime = sToTime(audio.currentTime);
-		var duration = sToTime(audio.duration);
+		var currentTime = sToTime(audioPlayer.currentTime);
+
+
+		var duration = audioPlayer.duration;
+
+		if(!$.isNumeric(duration)){
+			$('#display_current_place').html('--');
+			return;
+		}
+
+
+		var durationStr = sToTime(duration);
 
 
 		// GET CURRENT SONG
 		var title = now_playing.song.song + ' - ' + now_playing.song.artist;
 
-		$('#display_current_place').html(title + '<br />' + currentTime + "/" + duration);
+		$('#display_current_place').html(title + '<br />' + currentTime + "/" + durationStr);
 
 
 		// UPDATE MARKER
@@ -168,15 +353,15 @@
 	?>
 	<div class="Client-Page-Container">
 		<div class="Client-Home-Container">
+
+			<input type="text" id="searchBox" style="padding: 5px; font-size: 14px; display: block" placeholder="Search...">
+
+			<button id="shuffleSongs">SHUFFLE</button>
+
 			<div class="Home-Recommended-Songs-Container">
-				<div class="Title-Container">
-						<b class="TextStyle-Title">Recommended Songs</b>
-				</div>
-					<div class="Recommended-Songs-Container" id="html-frame">
-					</div>
+				<div class="Recommended-Songs-Container" id="html-frame"></div>
 			</div>
 		</div>
-			<div id="display_current_place"></div>
 
 	</div>
 
