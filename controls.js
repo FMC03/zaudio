@@ -1,49 +1,3 @@
-<!-- 
-
-	TO DO:
-
-	X UPDATE "NOW PLAYING" CONTENT
-
-	X PROGRAM playNextSong()
-
-	X PROGRAM goBack() = 
-		- if within the two seconds, go to previous song.
-		- else back to start of song. 
-
-	X SEARCH FUNCTIONALITY
-
-	X SHUFFLE
-
-	X TOGGLE SEARCH BOX DISPLAY
-
-	- MOVE JS INTO ITS OWN FILE
-
-	- FIX UI, SO IT LOOKS THE WAY YOU WANT IT TO
-
-	- CLEAN UP FILES / FOLDERS AND CREATE NEW REPO
-
-
-
-
-
-
- -->
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Basic JS Architecture</title>
-
-			<link href="./client/css/html.css" type="text/css" rel="stylesheet">
-			<link href="./html.css" type="text/css" rel="stylesheet">
-
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-<script>
 
 
 	// DEFINE OUR APP STATE
@@ -79,9 +33,6 @@
 
 
 		$('#shuffleSongs').click(shuffleSongs);
-
-		 $('#seekslider').change(handleMarkerUpdate); 
-
 
 	});
 
@@ -295,13 +246,7 @@
 		$('#display_current_place').html( currentTime + "/" + durationStr);
 
 
-<<<<<<< HEAD
-		// UPDATE MARKER
-		var ratio = 100 * audioPlayer.currentTime / audioPlayer.duration;
-		$('#seekslider')[0].value = ratio;
-=======
 		
->>>>>>> 9475402a2c707f39c059481046df65125297215a
 
 	}
 	
@@ -340,81 +285,9 @@
 	}
 
 
-	
-
-	// HANDLE TRACK MARKER AND VOLUME CONTROLS
-	
-
-	//toggle mute
-	function mute() {
-		if(audioPlayer.muted) {
-			audioPlayer.muted = false;
-		} else {
-			audioPlayer.muted = true;
-		}
-	}
-	//seek
-	function seek(event) {
-		if(seeking) {
-			seekslider.value = event.clientX - seekslider.offsetLeft;
-			seekto = audio.duration * (seekslider.value / 100);
-			audioPlayer.currentTime = seekto;
-		}
-	}
-	//volume
-	function setvolume() {
-		audioPlayer.volume = volslider.value / 100;
-	}
-
-
-	handleMarkerUpdate = function(){
-		var place = $('#seekslider')[0].value;
-
-		var time = place / 100 * audioPlayer.duration;
-
-		audioPlayer.currentTime = time;
-	}
+		
 		
 
 	
 
 
-	</script>
-	
-
-</head>
-
-<body>
-	<?php
-	// require("server/database.php");
-	require('_includes/header.php');
-	?>
-	<div class="Client-Page-Container">
-		<div class="Client-Home-Container">
-
-			<input type="text" id="searchBox" style="padding: 5px; font-size: 14px; display: none" placeholder="Search...">
-
-			<button id="shuffleSongs"></button>
-
-			<div class="Home-Recommended-Songs-Container">
-				<div class="Recommended-Songs-Container" id="html-frame"></div>
-			</div>
-		</div>
-
-	</div>
-
-	<div>
-		<input id="seekslider" onmouseup="function(){ seeking=false; }" onmousedown="function(event){ seeking=true; seek(event); }" onmousemove="function(event){ seek(event); }" type="range" min="0" max="100" value="0" step="1">
-	</div>
-	<div>
-		<button onclick="mute()" id="mutebtn">MUTE</button>
-		<div>
-			<input id="volslider" onmousemove="setvolume()" type="range" min="0" max="100" value="100" step="1">	
-		</div>	
-	</div>
-
-
-	<?php require('_includes/footer.php');?>
-</body>
-
-</html>
