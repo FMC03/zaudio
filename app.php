@@ -80,6 +80,9 @@
 
 		$('#shuffleSongs').click(shuffleSongs);
 
+		 $('#seekslider').change(handleMarkerUpdate); 
+
+
 	});
 
 
@@ -295,8 +298,8 @@
 
 
 		// UPDATE MARKER
-		// var ratio = 100 * audio.currentTime / audio.duration;
-		// $('#seekslider')[0].value = ratio;
+		var ratio = 100 * audioPlayer.currentTime / audioPlayer.duration;
+		$('#seekslider')[0].value = ratio;
 
 	}
 	
@@ -336,7 +339,40 @@
 	}
 
 
-		
+	
+
+	// HANDLE TRACK MARKER AND VOLUME CONTROLS
+	
+
+	//toggle mute
+	function mute() {
+		if(audioPlayer.muted) {
+			audioPlayer.muted = false;
+		} else {
+			audioPlayer.muted = true;
+		}
+	}
+	//seek
+	function seek(event) {
+		if(seeking) {
+			seekslider.value = event.clientX - seekslider.offsetLeft;
+			seekto = audio.duration * (seekslider.value / 100);
+			audioPlayer.currentTime = seekto;
+		}
+	}
+	//volume
+	function setvolume() {
+		audioPlayer.volume = volslider.value / 100;
+	}
+
+
+	handleMarkerUpdate = function(){
+		var place = $('#seekslider')[0].value;
+
+		var time = place / 100 * audioPlayer.duration;
+
+		audioPlayer.currentTime = time;
+	}
 		
 
 	
@@ -363,6 +399,16 @@
 			</div>
 		</div>
 
+	</div>
+
+	<div>
+		<input id="seekslider" onmouseup="function(){ seeking=false; }" onmousedown="function(event){ seeking=true; seek(event); }" onmousemove="function(event){ seek(event); }" type="range" min="0" max="100" value="0" step="1">
+	</div>
+	<div>
+		<button onclick="mute()" id="mutebtn">MUTE</button>
+		<div>
+			<input id="volslider" onmousemove="setvolume()" type="range" min="0" max="100" value="100" step="1">	
+		</div>	
 	</div>
 
 

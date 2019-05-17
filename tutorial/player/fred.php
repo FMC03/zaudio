@@ -236,14 +236,6 @@
 
 		<div>
 			<input id="seekslider" onmouseup="function(){ seeking=false; }" onmousedown="function(event){ seeking=true; seek(event); }" onmousemove="function(event){ seek(event); }" type="range" min="0" max="100" value="0" step="1">
-
-			<!--
-			Seek slider ^^^^^ code error is somewhere in here
-
-
-			 onmouseup="function() {seeking=false; };" 
-			onmousedown=" function(event) { seeking=true; seek(event); };" 
-			onmousemove="function(event) { seek(event); };" -->
 		</div>
 	</div>
 	<div>
