@@ -27,10 +27,7 @@
 
 
 
- -->
-
-
-<!DOCTYPE html>
+ --><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -294,14 +291,9 @@
 		
 		$('#display_current_place').html( currentTime + "/" + durationStr);
 
-
-<<<<<<< HEAD
 		// UPDATE MARKER
 		var ratio = 100 * audioPlayer.currentTime / audioPlayer.duration;
 		$('#seekslider')[0].value = ratio;
-=======
-		
->>>>>>> 9475402a2c707f39c059481046df65125297215a
 
 	}
 	
