@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic JS Architecture</title>
+
+			<link href="../client/css/html.css" type="text/css" rel="stylesheet">
+			<link href="../music.css" type="text/css" rel="stylesheet">
+
+
+	<style type="text/css">
+		
+
+	</style>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+
+
+		var numbers = {
+			key1 : 'value 1',
+			key2 : 'value 2'
+		}
+
+
+		// DEFINE OUR DATA OBJECT
+		// JAVASCRIPT OBJECT NOTATION (JSON)
+
+		var songs = 	[
+														
+							// songs[0]
+							{
+								song: "Gucci Gang",
+								artist : "Lil Pump",
+								img: 'client/images/gc.jpg',
+								likes: "5",
+								repeats: "5k+"
+							},
+
+							
+							// songs[1]
+							{
+								song: "Feels Like Summer",
+								artist: "Childish Gambino",
+								img: 'client/images/fls.png',
+								likes: "1.3k+",
+								repeats: "5k+"
+							},
+
+							// songs[2]
+							{
+								song: "XO Tour Lif3",
+								artist: "Lil Uzi Vert",
+								img : 'client/images/xotl.jpg',
+								likes: "2k+",
+								repeats: "5k+",
+							}
+						];
+
+
+
+		// start our empty html string
+		var html = '';
+
+
+		for(var i = 0; i < songs.length; i++){
+
+			var song = songs[i];
+			
+			html 	+= '<div class="song">' + 	
+							'<h3>' + song.song	 + '</h1>' +
+							'<br /><i>' + song.artist	 + '</i>' +
+						'</div>';
+
+		}
+
+
+		
+
+		
+
+	
+		// WAIT UNTIL THE PAGE HAS LOADED
+		$(function(){
+
+			
+			// AND THEN RUN THIS...
+			var element = $('#html_frame');
+
+			element.html(html);
+
+			element.css('color', 'red');
+
+			element.click(function(){
+				alert('click!!!')
+			})
+
+		});
+
+
+	</script>
+
+</head>
+<body>
+	<div id="html_frame"></div>
+banana
+	
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style>
+	.droptarget {
+	  float: left; 
+	  width: 100px; 
+	  height: 35px;
+	  margin: 15px;
+	  padding: 10px;
+	  border: 1px solid #aaaaaa;
+	}
+</style>
+</head>
+<body>
+
+
+	<div style="border: solid 1px #ccc; width: 400px; padding: 20px;" ondrop="drop(event)" ondragover="dragover(event)">
+
+		<div style="background: red; height: 50px; width: 50px; border-radius: 25px;"
+				ondragstart="dragStart(event)" ondrag="dragging(event)"  draggable="true" id="draggable_ball"></div>
+
+	</div>
+
+
+
+<script>
+
+var dragging = false;
+
+var lastPosition = {
+	x : 0,
+	y : 0
+}
+
+
+/* Events fired on the drag target */
+function dragStart(event) {
+	console.log('drag started');
+	console.log(event);
+
+	dragging = false;
+
+	// THIS IS VITAL - WHAT ARE WE TRANSFERRING?
+	event.dataTransfer.setData("Text", event.target.id);
+}
+
+function dragging(event) {
+	// console.log(dragging)
+	// console.log('dragging: ' + event.screenX + ', ' + event.screenY);
+	
+}
+
+
+/* Events fired on the drop target */
+function dragover(event) {
+ 	event.preventDefault();
+
+ 	if(!dragging){
+ 		lastPosition.x = event.screenX;
+ 		lastPosition.y = event.screenY;
+ 		dragging = true;
+ 	}
+
+ 	if(event.screenY != lastPosition.screenY){
+ 		var yDiff = event.screenY - lastPosition.screenY;
+ 		document.getElementById('draggable_ball').style.
+ 	}
+
+
+ 	console.log('drag over: ' + event.screenX + ', ' + event.screenY);
+
+
+
+
+
+
+}
+
+function drop(event) {
+  event.preventDefault();
+
+ 	var data = event.dataTransfer.getData("Text");
+
+	var draggable_ball = document.getElementById('draggable_ball');
+
+  	event.target.appendChild(draggable_ball);
+  
+ 	console.log('dropped');
+	console.log(event);
+}
+</script>
+
+</body>
+</html>

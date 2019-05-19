@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width">
+	<title>ZAudio - Prime Audio</title>
+	<link href="client/css/index.css?v=<?php echo time();?>" type="text/css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="client/js/control.js?v=<?php echo time();?"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+	<div class="client-page-container">
+		<input type="text" id="searchBox" style="padding: 5px; font-size: 14px; display: none" placeholder="Search...">
+		<!-- LOGIN PAGE UI -->
+		<div class="account-login-container" hidden="true">
+			<div class="account-form-container">
+				<div class="return-container">
+					<button><i class="fas fa-arrow-left"></i></button>
+				</div>
+				<form class="signup-container" id="signup-form" method="POST">
+					<div class="signup-name input-div">
+						<input id="signup-nameinput" name="signup-name" maxlength="255" type="text" />
+						<h1 class="s-form-text">Name</h1>
+					</div>
+					<div class="signup-email input-div">
+						<input id="signup-emailinput" name="signup-email" maxlength="255" type="text" />
+						<h1 class="s-form-text">Email</h1>
+					</div>
+					<div class="signup-password input-div">
+						<input id="signup-passwordinput" name="signup-password" maxlength="255" type="password" />
+						<h1 class="s-form-text">Password</h1>
+					</div>
+					<div class="signup-passwordconfirmation input-div">
+						<input id="signup-passwordconfirmationinput" name="signup-passwordconfirmation" maxlength="255" type="password" />
+						<h1 class="s-form-text">Confirm Password</h1>
+					</div>
+					<button type="submit" name="signup" class="button">Register <i class="fas fa-arrow-right" style="float: right; padding-top: 2px;"></i></button>
+					<h1 class="s-text">By creating an account, you agree to our <b style="color: #e5084f; font-weight: 450;">Terms of Use</b>, and have read our <b style="color: #e5084f; font-weight: 450;">Privacy Policy</b>.</h1>
+				</form>
+				<form class="login-container" id="login-form" method="POST" hidden="true">
+					<div class="login-email input-div">
+						<input id="login-emailinput" name="login-email" maxlength="255" type="text" />
+						<h1 class="s-form-text">Email</h1>
+					</div>
+					<div class="login-password input-div">
+						<input id="login-passwordinput" name="login-password" maxlength="255" type="password" />
+						<h1 class="s-form-text">Password</h1>
+					</div>
+					<h1 style="margin: 0px; padding: 5px; font-size: 11.5px; float: right; font-family: sans-serif; color: #e52e4e;">Forgot Password?</h1>
+					<button type="submit" name="signin" class="button">Sign in <i class="fas fa-arrow-right" style="float: right; padding-top: 1px;"></i></button>
+					<h1 class="s-text">By signing in, you agree to our <b style="color: #e5084f; font-weight: 450;">Terms of Use</b>, and have read our <b style="color: #e5084f; font-weight: 450;">Privacy Policy</b>.</h1>
+				</form>
+				<!-- <h1 class="s-text">&copy; 2018-2019 Mountain Bunny</h1> -->
+			</div>
+		</div>
+
+		<!-- HOME PAGE UI -->
+		<div class="home-container">
+			<div class="suggested-tracks-container" id="htmlframe">
+				<div class="suggested-track">
+					<div class="audio-img" style="background-image: url(client/img/fls.png);"></div>
+					<div class="audio-information-container">
+						<h2 class="s-audio-title">Mobile Games</h2>
+						<h2 class="s-audio-artist">Baxter Media</h2>
+					</div>
+					<div class="audio-option-container">
+						<span class="circle-option"></span>
+						<span class="circle-option"></span>
+						<span class="circle-option"></span>
+					</div>
+				</div>
+				<div class="suggested-track">
+					<div class="audio-img" style="background-image: url(client/img/ag.jpg);"></div>
+					<div class="audio-information-container">
+						<h2 class="s-audio-title">Emilyblenk</h2>
+						<h2 class="s-audio-artist">Baxter Media</h2>
+					</div>
+					<div class="audio-option-container">
+						<span class="circle-option"></span>
+						<span class="circle-option"></span>
+						<span class="circle-option"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer-container">
+			<div class="option-container">
+				<a onclick="toggleHome()" class="footer-option home">
+					<i class="fas fa-home"></i>
+				</a>
+				<a onclick="toggleSearch()" class="footer-option search">
+					<i class="fas fa-search"></i>
+				</a>
+				<a onclick="toggleAccount()" class="footer-option account">
+					<i class="fas fa-user-circle"></i>
+				</a>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

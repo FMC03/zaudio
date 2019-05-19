@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		
+		// <AUDIO> REFRENCE
+		// https://www.w3schools.com/tags/ref_av_dom.asp
+
+
+
+		function changeSong(filename){
+			var src_element = document.getElementById("source_ctrl")
+			src_element.src = filename;
+
+
+			var audio_player = document.getElementById("audio_player");
+			audio_player.load(); 
+
+			window.location.hash = filename;
+
+
+			// DISPLAY INFORMATION ABOUT THE NEW TRACK
+			$('#display_song_name').html(filename);
+
+
+			// HANDLE "EVENTS"
+			audio_player.onended = function() {
+			    alert("The audio has ended");
+			};
+
+			audio_player.ontimeupdate = function(){
+				console.log(audio_player.currentTime)
+				$('#display_current_place').html(audio_player.currentTime);	
+			}
+
+
+		}
+
+		function playAudio(){
+			var audio_player = document.getElementById("audio_player");
+			audio_player.play();
+		}
+
+		function pauseAudio(){
+			var audio_player = document.getElementById("audio_player");
+			audio_player.pause();
+		}
+
+		$(function(){
+
+			var hash = window.location.hash.substr(1);
+			console.log(hash);
+			if(hash != '') changeSong(hash);
+
+
+			var audio_player = document.getElementById("audio_player");
+
+			audio_player.onplay = function() {
+				alert('i am playing!')
+    			$('#play_button').hide();
+    			$('#pause_button').show();
+			};
+
+			audio_player.onpause = function() {
+				alert('i have paused!')
+    			$('#pause_button').hide();
+    			$('#play_button').show();
+			};			
+		})
+
+	</script>
+</head>
+<body>
+	
+	<ul>
+		<li onclick="changeSong('../../1.mp3')">SONG ONE</li>
+
+		<li onclick="changeSong('../../2.mp3')">SONG TWO</li>
+
+		<li onclick="changeSong('../../3.mp3')">SONG THREE</li>
+	</ul>
+
+	<button onclick="playAudio()" id="play_button">PLAY!</button>
+
+	<button onclick="pauseAudio()" id="pause_button"style="display: none">PAUSE!</button>
+
+
+
+	<audio controls id="audio_player">
+
+  		<source id="source_ctrl" src="../../1.mp3" type="audio/mpeg">
+	
+	</audio>
+
+
+	<div id="my_audio_player">
+
+		<b>Song Name:</b>
+		<br /><span id="display_song_name"></span>
+
+		<br /><br />
+
+		<b>Current Place:</b>
+		<br /><span id="display_current_place"></span>
+
+	</div>
+
+	
+
+</body>
+</html>

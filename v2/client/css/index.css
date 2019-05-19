@@ -1,0 +1,571 @@
+/* BODY & HTML */
+body, html{
+    margin: 0px;
+    padding: 0px;
+    background-color: #ffffff;
+    min-width: 320px;
+    user-select: none;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+div.client-page-container{
+    transition: all .3s linear;
+}
+
+div.hidden{
+    display: none;
+}
+
+/* SEARCH CONTAINER */
+div.search-box-container{
+    transition: all .3s linear;
+    padding: 15px 10px;
+    padding-bottom: 10px;
+}
+
+div.search-box-container div.search-container{
+    padding: 5px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+div.search-box-container div.search-container input#search-box{
+    display: block;
+    width: -webkit-fill-available;
+    padding: 10px 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 35px #00000029;
+    border-radius: 45px;
+    color: #101010;
+    padding-left: 45px;
+}
+
+div.search-box-container div.search-container i{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: 20px;
+    padding: 10px;
+    color: #ffffff;
+    background: #e5084f;
+    border-radius: 45px 0px 0px 45px;
+}
+
+/* ACCOUNT LOGIN CONTAINER */
+div#account-container{
+    display: none;
+    padding-left:  20px;
+    padding-right: 20px;
+}
+
+div#account-container div.account-form-container div.return-container{
+    margin: 10px 0px;
+    margin-bottom: 50px;
+}
+
+div#account-container div.account-form-container div.return-container button{
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #e5084f;
+    padding: 10px;
+    outline: none;
+}
+
+div.account-form-container form div.input-div{
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+div.account-form-container form div.input-div input{
+    -webkit-appearance: none;
+    border-radius: 0px;
+    width: -webkit-fill-available;
+    height: 35px;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+    color: #4e4e4e;
+    margin: 6px 0px;
+    margin-top: 10px;
+    outline: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: all 100ms linear;
+}
+
+div.account-form-container form div.input-div i{
+    width: 23px;
+    position: absolute;
+    left: 1px;
+    top: 6px;
+    font-size: 24px;
+    padding: 10.5px 10px;
+    background: #b5b5b5;
+    color: #ffffff;
+    border-radius: 5px 0px 0px 5px;
+}
+
+div.account-form-container form div input:focus{
+    border-bottom-color: #e5084f;
+}
+
+div.account-form-container form div input:focus + h1{
+    color: #e5084f;
+}
+
+div.account-form-container form button.button{
+    width: 100%;
+    border-radius: 5px;
+    text-align: left;
+    border: none;
+    background: #e5084f;
+    color: #ffffff;
+    padding: 12px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0px;
+    margin-bottom: 0px;
+    outline: none;
+}
+
+div.account-form-container form div button.btn{
+    background: none;
+    color: #5babfb;
+    padding: 0px;
+    margin: 0px;
+    font-size: 13px;
+}
+
+div.account-form-container form div.divider-container{
+    text-align: center;
+    position: relative;
+}
+
+div.account-form-container form div.divider-container::after{
+    content: "";
+    width: 100%;
+    background-color: transparent;
+    display: block;
+    height: 1px;
+    border-top: 1px solid #e6e6e6;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    z-index: 1;
+}
+
+div.account-form-container form div.divider-container h2{
+    line-height: 1;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: #b3b3b3;
+    font-weight: 400;
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    padding: 0 8px 0 7px;
+}
+
+/* HOME PAGE*/
+div#home-container{
+    padding-top: 15px;
+}
+
+div.suggested-tracks-container div.suggested-track div.audio-img{
+    background-size: cover;
+    width: 55px;
+    height: 55px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px #00000052;
+    background-position: center;
+}
+
+div.suggested-tracks-container div.suggested-track{
+    height: 55px;
+    margin-bottom: 10px;
+    padding: 0px 15px;
+}
+
+div.suggested-tracks-container div.suggested-track div{
+    float: left;
+}
+
+div.suggested-tracks-container div.suggested-track div.audio-information-container{
+    padding: 2px 0px 0px 7px;
+}
+
+div.suggested-tracks-container div.suggested-track div.audio-option-container{
+    float: right;
+    padding: 10px 5px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+div.suggested-tracks-container div.suggested-track div.audio-option-container span.circle-option{
+    width: 5px;
+    height: 5px;
+    background: #232323;
+    display: inline-block;
+    border-radius: 100%;
+    margin: 0px 1.5px;
+}
+
+/* AUDIO PAGE */
+div#audio-container{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    background: #ffffff;
+    bottom: 0px;
+}
+
+div#audio-container div.top-container{
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+div#audio-container div.top-container button{
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: #e5084f;
+    padding: 10px;
+    outline: none;
+}
+
+div#audio-container div.top-container button.shuffle{
+    float: right;
+}
+
+div#audio-container div#audio-information{
+    padding-bottom: 20px;
+}
+
+div#audio-container div#audio-information div{
+    background-size: cover;
+    width: -webkit-fill-available;
+    height: 250px;
+    margin: 0px 55px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px #00000052;
+    background-position: center;
+}
+
+div#audio-container div#audio-information h3{
+    text-align: center;
+}
+
+div#audio-container div.audio-option{
+    text-align: center;
+    padding: 15px;
+    padding-top: 0px;
+}
+
+div#audio-container div.audio-option button{
+    font-size: 25px;
+    background: none;
+    border: none;
+    color: #e5084f;
+    outline: none;
+}
+
+div#audio-container div.audio-option button.play-state{
+    font-size: 30px;
+}
+
+div#audio-container div.audio-data div.audio-time{
+    padding: 0px 30px;
+    height: 16px;
+}
+
+div#audio-container div.audio-data h3{
+    margin: 0px;
+}
+
+div#audio-container div.audio-data h3.current{
+    float: left;
+}
+
+div#audio-container div.audio-data h3.end{
+    float: right;
+}
+
+div#audio-container div.audio-data div.audio-slider{
+    padding: 0px 50px;
+    padding-top: 5px;
+}
+
+.input {
+    outline: none;
+}
+
+.input #seekslider{
+    width: 100%;
+}
+
+.input #volslider{
+    width: 80px;
+}
+
+input[type='range']{
+    width: -webkit-fill-available;
+    -webkit-appearance: none !important;
+    margin:0px;
+    padding:0px;
+    background: #e5084f;
+    height:3px;
+    border: none;
+}
+
+input[type='range']::-ms-fill-lower{
+    background:#e5084f;
+}
+
+input[type='range']::-ms-fill-upper{
+    background:#e5084f;
+}
+
+input[type='range']::-moz-range-track{
+    border:none;
+    background: #e5084f;
+}   
+
+input[type='range']::-webkit-slider-thumb{
+    -webkit-appearance: none !important;
+    background: radial-gradient(#FFF, #333);
+    height:11px;
+    width:11px;
+    border-radius:100%;
+    cursor:pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+    background: radial-gradient(#FFF, #333);
+    height:11px;
+    width:11px;
+    border-radius:100%;
+    cursor:pointer;
+}
+
+input[type='range']::-ms-thumb {
+    -webkit-appearance: none !important;
+    background: radial-gradient(#FFF, #333);
+    height:11px;
+    width:11px;
+    border-radius:100%;
+    cursor:pointer;
+}
+
+/* CURRENTLY PLAYING PAGE*/
+
+/* AUDIO PLAYER */
+div#audio-player{
+    width: 100%;
+    display: none;
+    position: fixed;
+    bottom: 69px;
+    background: none;
+    left: 0px;
+    z-index: 2;
+    height: 70px;
+    background-size: cover;
+    background-position: center;
+}
+
+div#audio-player div.player-container{
+    width: 95%;
+    height: -webkit-fill-available;
+    background: #ffffff;
+    margin: auto;
+    box-shadow: 0px 0px 3px #00000038;
+}
+
+div#audio-player div#audio-progress{
+    top: 0px;
+    left: 0px;
+    width: 0%;
+    height: 4px;
+    background: #e5084f;
+    box-shadow: 0px 0px 15px #ff005185;
+    border-radius: 10px;
+    transition: all .1s linear;
+}
+
+div#audio-player div#audio-information-container{
+    float: left;
+    padding: 6px;
+}
+
+div#audio-player div#audio-information-container div{
+    float: left;
+}
+
+div#audio-player div#audio-information-container div.audio-information{
+    padding-left: 5px;
+    padding-top: 1px;
+}
+
+div#audio-player div#audio-information-container div.audio-img{
+    background-size: cover;
+    width: 52px;
+    height: 52px;
+    background-position: center;
+    border-radius: 3px;
+}
+
+div#audio-player div#audio-information-container div.audio-information h2{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+div#audio-player div.option-container{
+    float: right;
+    padding-right: 15px;
+    padding-top: 8px;
+}
+
+div#audio-player div.option-container button{
+    background: none;
+    border: none;
+    color: #292929;
+    font-size: 25px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    outline: none;
+}
+
+/* FOOTER */
+footer.footer-container{
+    width: 100%;
+    display: inline-block;
+    background: #ffffff;
+    border-top: 1px solid #efefef;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 3;
+    height: 40px;
+}
+
+footer.footer-container div.option-container{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+footer.footer-container div.option-container a.footer-option{
+    width: 30%;
+    height: 100%;
+    padding: 20px;
+    text-decoration: none;
+}
+
+footer.footer-container div.option-container a.footer-option i{
+    text-decoration: none;
+    font-size: 35px;
+    color: #292929;
+}
+
+footer.footer-container div.option-container a.search i{
+    font-size: 30px;
+}
+
+/* FONT STYLES */
+h1.s-form-text{
+    display: inline-block;
+    position: absolute;
+    top: -3px;
+    left: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    background: #ffffff;
+    color: #b7b7b7;
+}
+
+h1.s-text{
+    color: #555454;
+    font-weight: 450;
+    font-size: 12px;
+    font-family: sans-serif;
+    text-align: center;
+    display: block;
+}
+
+h2.s-audio-title{
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+    color: #101010;
+    font-family: sans-serif;
+}
+
+h2.s-audio-artist{
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    color: #e5084f;
+    font-family: sans-serif;
+}
+
+h2.m-description-text{
+    font-size: 10px;
+    font-weight: bold;
+    color: #565656;
+}
+
+h2.audio-title-text{
+    font-size: 16px;
+    font-weight: bold;
+    color: #101010;
+}
+
+h2.audio-artist-text{
+    font-size: 13px;
+    font-weight: bold;
+    color: #292929;
+}
+
+h2.audio-time-text{
+    font-size: 13px;
+    font-weight: bold;
+    color: #292929;
+}
+
+h3.audio-title-text{
+    font-size: 30px;
+    margin: 0px;
+    margin-top: 10px;
+    color: #131313;
+}
+
+h3.audio-artist-text{
+    font-size: 15px;
+    margin: 0px;
+    color: #e5084f;
+}
+
+h3.audio-time-text{
+    font-size: 16px;
+    color: #e5084f;
+}
