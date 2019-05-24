@@ -3,21 +3,256 @@
 <head>
 	<meta name="viewport" content="width=device-width">
 	<title>ZAudio - Prime Audio</title>
-	<link href="client/css/index.css?v=<?php echo time();?>" type="text/css" rel="stylesheet">
+	<link href="client/css/index.css" type="text/css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="client/js/control.js?v=<?php echo time();?"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="client/js/effect.js" type="text/javascript"></script>
+	<script type="text/javascript" src="client/list.js"></script>
+	<script>
+		tracklist_client = {
+			search_term: '',
+			tracks: []
+		}
+
+		now_playing = {
+			index: 0,
+			song: null,
+		}
+
+		audioPlayer = new Audio();
+
+		$(function(){
+			processSearch();
+			$('#search-box').keyup(processSearch);
+			$('#seek-slider').change(handleMarkerUpdate);
+			$('#shuffle-songs').click(shuffleSongs);
+		})
+
+		function shuffleSongs(){
+			shuffle(tracklist_client.tracks);
+			renderCurrentTrackList();
+		}
+
+		function shuffle(array) {
+			array.sort(() => Math.random() - 0.5);
+		}
+
+		function processSearch(){
+			var search_term = $('#search-box').val();
+			tracklist_client.search_term = search_term;
+			tracklist_client.tracks = [];
+			for(var i = 0; i < tracklist_data.length; i++){
+				var song = tracklist_data[i];
+				var includeTrack = false;
+				search_term = search_term.toUpperCase();
+				if(song.artist.toUpperCase().indexOf(search_term) != -1) includeTrack = true;
+				if(song.song.toUpperCase().indexOf(search_term) != -1) includeTrack = true;
+				if(includeTrack) tracklist_client.tracks.push(song);
+			}
+			renderCurrentTrackList();
+		}
+
+		function renderCurrentTrackList(){
+			var html = '';
+			for(var i = 0; i < tracklist_client.tracks.length; i++){
+				var song = tracklist_client.tracks[i];
+				html 	+=  '<div class="suggested-track" onclick="playSong('+ i +')">' +
+								'<div class="audio-img" style="background-image: url(' + song.img +');"></div>' +
+								'<div class="audio-information-container">' +
+									'<h2 class="s-audio-title">'+ song.song +'</h2>' +
+									'<h2 class="s-audio-artist">'+ song.artist +'</h2>' +
+								'</div>' +
+								'<div class="audio-option-container">' +
+									'<span class="circle-option"></span>' +
+									'<span class="circle-option"></span>' +
+									'<span class="circle-option"></span>' +
+								'</div>' +
+							'</div>';
+			}
+			$("#htmlframe").html(html);
+		}
+
+		function toggleHome(){
+			var is_home_displaying = $("#home-container").css("display");
+			if(is_home_displaying == "none"){
+				$("#account-container").css("display", "none");
+				$("#home-container").css("display", "block");
+			}
+		}
+
+		function toggleAccount(){
+			var is_account_displaying = $("#account-container").css("display");
+			if(is_account_displaying == "none"){
+				$("#home-container").css("display", "none");
+				$("#account-container").css("display", "block");
+			}
+		}
+
+		function toggleSearch(){
+			var is_search_displaying = $('#search-box').css('display');
+			if(is_search_displaying == 'block')  $('#searchBox').css('display', 'none');
+			if(is_search_displaying == 'none')  $('#searchBox').css('display', 'block');
+		}
+
+		function togglePlayer(){
+			var is_audio_displaying = $("#audio-container").css("display");
+			if(is_audio_displaying == "none") $("#audio-container").slideDown(800);
+			if(is_audio_displaying == "block") $("#audio-container").slideUp(800);
+		}
+
+		function playSong(i){
+			var song = tracklist_client.tracks[i];
+
+			var is_audio_displaying = $("#audio-player").css("display");
+			if(is_audio_displaying == "none"){
+				$("#audio-player").slideDown(800);
+			}
+			$("#play-state-icon").removeClass("fas fa-play");
+			$("#play-state-icon").addClass("fas fa-pause");
+			$("#play-state-icon2").removeClass("fas fa-play");
+			$("#play-state-icon2").addClass("fas fa-pause");
+			$("#audio-progress").css("width", "0%");
+
+			now_playing = {
+				"index" : i,
+				"song" : song
+			};
+
+			audioPlayer.src = song.audio;
+			audioPlayer.play();
+			audioPlayer.volume = .05;
+
+			var nowPlayingHTML = 
+			'<div class="audio-img" style="background-image: url(' + song.img +');"></div>' +
+			'<div class="audio-information">' +
+				'<h2 class="audio-title-text">'+ song.song +'</h2>' +
+				'<h2 class="audio-artist-text">'+ song.artist +'</h2>' +
+			'</div>';
+
+			$('#audio-information-container').html(nowPlayingHTML);
+
+			var currentlyPlayingHTML =
+			'<div class="audio-img" style="background-image: url(' + song.img +');"></div>' +
+			'<h3 class="audio-title-text">'+ song.song +'</h2>' +
+			'<h3 class="audio-artist-text">'+ song.artist +'</h2>';
+
+			$('#audio-information').html(currentlyPlayingHTML);
+		}
+
+		function togglePlayState() {
+			if(!audioPlayer.src){
+				return
+			}
+			if(audioPlayer.paused) {
+				audioPlayer.play();
+				$("#play-state-icon").removeClass("fas fa-play");
+				$("#play-state-icon").addClass("fas fa-pause");
+				$("#play-state-icon2").removeClass("fas fa-play");
+				$("#play-state-icon2").addClass("fas fa-pause");
+			} else {
+				audioPlayer.pause();
+				$("#play-state-icon").removeClass("fas fa-pause");
+				$("#play-state-icon").addClass("fas fa-play");
+				$("#play-state-icon2").removeClass("fas fa-pause");
+				$("#play-state-icon2").addClass("fas fa-play");
+			}
+		}
+
+		function seek(event) {
+			if(seeking) {
+				seekslider.value = event.clientX - seekslider.offsetLeft;
+				seekto = audio.duration * (seekslider.value / 100);
+				audioPlayer.currentTime = seekto;
+			}
+		}
+
+		handleMarkerUpdate = function(){
+			var place = $('#seek-slider')[0].value;
+			var time = place / 100 * audioPlayer.duration;
+			audioPlayer.currentTime = time;
+		}
+
+		function playNextSong(){
+			var currentIndex = now_playing.index;
+			currentIndex++;
+			if(currentIndex == tracklist_client.tracks.length) currentIndex = 0;
+			playSong(currentIndex);
+		}
+
+		function goBack(){
+			var currentTime = audioPlayer.currentTime;
+			var currentIndex = now_playing.index;
+			if(currentTime < 2 && currentIndex != 0){
+				playSong(currentIndex - 1);
+			}else{
+				audioPlayer.currentTime = 0;
+			}
+		}
+
+		audioPlayer.ontimeupdate = function(){
+			var currentTime = sToTime(audioPlayer.currentTime);
+			var duration = audioPlayer.duration;
+
+			if(!$.isNumeric(duration)){
+				$('#display_current_place').html('--');
+				return;
+			}
+
+			var durationStr = sToTime(duration);
+			$("#audio-current-time").html(currentTime);
+			$("#audio-end-time").html(durationStr);
+			var ratio = 100 * audioPlayer.currentTime / audioPlayer.duration;
+			$('#seek-slider')[0].value = ratio;
+			$("#audio-progress").css("width", ratio + "%");
+		}
+
+		audioPlayer.onended = function(){
+			$("#play-state-icon").removeClass("fas fa-pause");
+			$("#play-state-icon").addClass("fas fa-play");
+			$("#play-state-icon2").removeClass("fas fa-pause");
+			$("#play-state-icon2").addClass("fas fa-play");
+			playNextSong();
+		}
+
+		function sToTime(t) {
+			var s =	padZero(parseInt((t / (60 * 60)) % 24)) + ":" +
+				padZero(parseInt((t / (60)) % 60)) + ":" + 
+				padZero(parseInt((t) % 60));
+
+			var formattedTime = '';
+			var copy = false;
+			for(var i = 0; i < s.length; i++){
+				var char = s.charAt(i);
+				if(copy) formattedTime += char;
+				else {
+					if(char != '0' && char != ':') {
+						copy = true;
+						formattedTime += char;					
+					}
+					else if(i == 4) {
+						copy = true;
+						formattedTime += char;					
+					}
+				}
+			}
+			return formattedTime;
+		}
+
+		function padZero(v) {
+			return (v < 10) ? "0" + v : v;
+		}
+	</script>
 </head>
 <body>
-	<div class="client-page-container">
-		<input type="text" id="searchBox" style="padding: 5px; font-size: 14px; display: none" placeholder="Search...">
+	<div class="client-page-container" id="page-container">
 		<!-- LOGIN PAGE UI -->
-		<div class="account-login-container" hidden="true">
+		<div id="account-container">
 			<div class="account-form-container">
 				<div class="return-container">
 					<button><i class="fas fa-arrow-left"></i></button>
 				</div>
-				<form class="signup-container" id="signup-form" method="POST">
+				<form class="signup-container" id="signup-form">
 					<div class="signup-name input-div">
 						<input id="signup-nameinput" name="signup-name" maxlength="255" type="text" />
 						<h1 class="s-form-text">Name</h1>
@@ -34,8 +269,8 @@
 						<input id="signup-passwordconfirmationinput" name="signup-passwordconfirmation" maxlength="255" type="password" />
 						<h1 class="s-form-text">Confirm Password</h1>
 					</div>
-					<button type="submit" name="signup" class="button">Register <i class="fas fa-arrow-right" style="float: right; padding-top: 2px;"></i></button>
-					<h1 class="s-text">By creating an account, you agree to our <b style="color: #e5084f; font-weight: 450;">Terms of Use</b>, and have read our <b style="color: #e5084f; font-weight: 450;">Privacy Policy</b>.</h1>
+					<!-- <button name="signup" class="button">Register <i class="fas fa-arrow-right" style="float: right; padding-top: 2px;"></i></button> -->
+					<h1 class="s-text">The following is not complete, will be available in version 2.</h1>
 				</form>
 				<form class="login-container" id="login-form" method="POST" hidden="true">
 					<div class="login-email input-div">
@@ -55,21 +290,16 @@
 		</div>
 
 		<!-- HOME PAGE UI -->
-		<div class="home-container">
-			<div class="suggested-tracks-container" id="htmlframe">
-				<div class="suggested-track">
-					<div class="audio-img" style="background-image: url(client/img/fls.png);"></div>
-					<div class="audio-information-container">
-						<h2 class="s-audio-title">Mobile Games</h2>
-						<h2 class="s-audio-artist">Baxter Media</h2>
-					</div>
-					<div class="audio-option-container">
-						<span class="circle-option"></span>
-						<span class="circle-option"></span>
-						<span class="circle-option"></span>
-					</div>
+		<div id="home-container">
+			<div class="search-box-container">
+				<div class="search-container">
+					<input type="text" id="search-box" placeholder="Search by Artist, Title, Album...">
+					<i class="fas fa-search"></i>
 				</div>
-				<div class="suggested-track">
+			</div>
+			<div class="suggested-tracks-container" id="htmlframe">
+				
+				<!-- <div class="suggested-track">
 					<div class="audio-img" style="background-image: url(client/img/ag.jpg);"></div>
 					<div class="audio-information-container">
 						<h2 class="s-audio-title">Emilyblenk</h2>
@@ -80,6 +310,63 @@
 						<span class="circle-option"></span>
 						<span class="circle-option"></span>
 					</div>
+				</div> -->
+			</div>
+		</div>
+
+		<!-- AUDIO UI -->
+		<div id="audio-container">
+			<div class="top-container">
+				<button onclick="togglePlayer();">
+					<i class="fas fa-arrow-left"></i>
+				</button>
+				<button id="shuffle-songs" class="shuffle">
+					<i class="fas fa-random"></i>
+				</button>
+			</div>
+			<div id="audio-information">
+				<div class="audio-img"></div>
+				<h3 class="audio-title-text"></h2>
+				<h3 class="audio-artist-text"></h2>
+			</div>
+			<div class="audio-option">
+				<button onclick="goBack();">
+					<i class="fas fa-step-backward"></i>
+				</button>
+				<button onclick="togglePlayState();" class="play-state">
+					<i id="play-state-icon2" class="fas fa-play"></i>
+				</button>
+				<button onclick="playNextSong();">
+					<i class="fas fa-step-forward"></i>
+				</button>
+			</div>
+			<div class="audio-data">
+				<div class="audio-time">
+					<h3 id="audio-current-time" class="audio-time-text current">0:00</h3>
+					<h3 id="audio-end-time" class="audio-time-text end">0:00</h3>
+				</div>
+				<div class="audio-slider">
+					<input id="seek-slider" onmouseup="function(){ seeking=false; }" onmousedown="function(event){ seeking=true; seek(event); }" onmousemove="function(event){ seek(event); }" type="range" min="0" max="100" value="0" step="1" />
+				</div>
+			</div>
+		</div>
+
+		<!-- AUDIO PLAYER UI -->
+		<div id="audio-player">
+			<div class="player-container">
+				<div id="audio-progress"></div>
+				<div id="audio-information-container">
+					<div class="audio-img"></div>
+					<h2 class="audio-title-text"></h2>
+					<h2 class="audio-artist-text"></h2>
+				</div>
+				<div class="option-container">
+					<button onclick="togglePlayer();">
+						<i class="fas fa-ellipsis-h"></i>
+					</button>
+					<button onclick="togglePlayState();">
+						<i id="play-state-icon" class="fas fa-play"></i>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -89,11 +376,8 @@
 				<a onclick="toggleHome()" class="footer-option home">
 					<i class="fas fa-home"></i>
 				</a>
-				<a onclick="toggleSearch()" class="footer-option search">
-					<i class="fas fa-search"></i>
-				</a>
 				<a onclick="toggleAccount()" class="footer-option account">
-					<i class="fas fa-user-circle"></i>
+					<i class="fas fa-user"></i>
 				</a>
 			</div>
 		</footer>
